@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+
+<html lang='en'>
+<head>
+
+  <title>Handshake</title>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+	<meta name="description" content="Decentralized certificate authority and naming" />
+	<meta property="og:title" content="Handshake" />
+	<meta property="og:description" content="Decentralized certificate authority and naming" />
+	<meta property="og:url" content="https://handshake.org" />
+	<meta property="og:image" content="https://www.handshake.org/images/landing/logo-dark.svg" />
+
+  <link rel="shortcut icon" href="/img/favicon/hns-favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="/css/fonts/nitti.css" />
+  <link rel="stylesheet" type="text/css" href="/css/fonts/ibmplexmono.css" />
+  <link rel="stylesheet" type="text/css" href="/css/fonts/ibmplexsans.css" />
+  <link rel="stylesheet" type="text/css" href="/css/footer.css"/>
+
+  
+    <link rel="stylesheet" type="text/css" href="/css/marketing.css" />
+  
+  <style type="text/css">
+    .no-fouc {display: none;}
+</style>
+
+<script type="text/javascript">
+    document.documentElement.className = 'no-fouc';
+</script>
+
+</head>
+
+<body class="light">
+
+  <header><div class="header-wrapper"><div class="inner-wrapper">
+    <nav id="navBar" class="no-js nav-bar">
+
+  
+    <div id='nav-toggle' class="burgermenu" href="#">☰</div>
+
+    <div id='overlay'></div>
+    <div id="burgernav">
+      <ul>
+
+          <li><a href="https://handshake-org.github.io">Documentation</a></li>
+          <li><a href="/community">Community</a></li>
+          <li><a href="/faq">Faq</a></li>
+          
+          
+      </ul>
+    </div>
+  
+
+  <a class="nav-logo" href="/">
+    <img class='logo logo-dark' src='/images/landing/logo-dark.svg' /><img class='logo logo-light' src='/images/landing/logo-light.svg' />
+  </a>
+
+  
+    <div class="nav-right ">
+      <div class="nav-links "">
+          <ul>
+            
+
+              <li><a href="https://handshake-org.github.io">Documentation</a></li>
+              <li><a href="/community">Community</a></li>
+              <li><a href="/faq">Faq</a></li>
+              
+              
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+  
+</nav>
+
+  </div></div></header>
+  <div class="content">
+    <div class="wrapper">
+      
+
+
+  <section class="default"><div class="section-wrapper">
+    <div class="hero-no-split">
+      <h1>FAQ</h1>
+    </div>
+  </div></section>
+
+  <section id="faq" class="light"><div class="section-wrapper faq">
+    <div id='navigation' class="links">
+      <a id='general-link' class='active' href="#general">General</a>
+      <a id='naming-link' href="#naming">Naming</a>
+      <a id='grants-link' href="#grants">Community Grants</a>
+      <a id='using-link' href="#using">Using Handshake</a>
+    </div>
+    <div id="questions">
+      <h2 id="general">GENERAL</h2>
+      <!--
+      <div class="question">
+        <h3>Question goes here
+        <span><footer class='footer-caret-down' src='/img/footer/down-caret.svg' alt='Toggle expanded answer on mobile'/></span>
+        <span class='hide'><footer class='footer-caret-up' src='/img/footer/up-caret.svg' alt='Toggle expanded answer on mobile'/></span></h3>
+        <span><p>Answer goes here</p></span>
+      </div>
+      -->
+
+      <div class="question">
+        <h3>What does Handshake do?
+        <span><footer class='footer-caret-down' src='/img/footer/down-caret.svg' alt='Toggle expanded answer on mobile'/></span>
+        <span class='hide'><footer class='footer-caret-up' src='/img/footer/up-caret.svg' alt='Toggle expanded answer on mobile'/></span></h3>
+        <span><p>Handshake is an experiment on collaborating to create a decentralized network which results in a global allocation of names. Think of the handles or usernames you use on services such as social networks, and domain names identifying the URI for websites. Nearly all of these services were provided by trusted third parties which prevent the web from truly being decentralized. Handshake provides a means, including key management and server/service authentication, for decentralized web services to experiment. The Internet currently relies upon a single trust root DNS zone and an amalgamation of private companies providing trusted Certificate Authorities to secure the internet, Handshake is an experiment and exploration in alternatives. By providing a way to do decentralized lookup of name records, one can produce hashes and keys to identify resources over decentralized networks without a trusted Certificate Authority corporation.</p></span>
+      </div>
+      <div class="question">
+        <h3>Why is canonicalization of naming within namespaces important?
+        <span><footer class='footer-caret-down' src='/img/footer/down-caret.svg' alt='Toggle expanded answer on mobile'/></span>
+        <span class='hide'><footer class='footer-caret-up' src='/img/footer/up-caret.svg' alt='Toggle expanded answer on mobile'/></span></h3>
+        <span><p>Having a unique name on a particular namespace or zone is incredibly important for the security of the internet. Having a decentralized unique namespace could enable decentralized internet technologies. If you have a username on a social network, you may want a unique URI to view your profile. Similarly, for domain TLDs and other resources, it is helpful to know that you're correctly communicating with the desired endpoint. Without a unique namespace, the internet is vulnerable to either everyone having to type in the cryptographic key (making name lack usefulness), or a lack of agreement on the relationship between a resource and name. This has very severe security implications. Handshake's <a href="https://en.wikipedia.org/wiki/Zooko%27s_triangle">goal</a> is decentralization, canonicalization of names, <b>and</b> security. With the root zone in use as of the time of this writing (2019), internet naming does not provide decentralization, nor secure authenticated canonicalization of names (the Certificate Authority system).</p></span>
+      </div>
+      <div class="question">
+        <h3>How does Handshake work?
+        <span><footer class='footer-caret-down' src='/img/footer/down-caret.svg' alt='Toggle expanded answer on mobile'/></span>
+        <span class='hide'><footer class='footer-caret-up' src='/img/footer/up-caret.svg' alt='Toggle expanded answer on mobile'/></span></h3>
+        <span><p>Handshake needs to reach global agreement on names and its owners. To do this, we need to develop ordering of when a name has already been registered in a decentralized way. In essence, we need decentralized global agreement on ordering. Handshake uses its own blockchain to do so. While there has been much misunderstanding on the purpose of a blockchain, the purpose is primarily to ordering events which occur over time (did A happen before B?). If no ordering of events are necessary, a blockchain is not needed. The Handshake blockchain creates an ordering of name registrations, so one knows when a name has already been registered. Without a global decentralized agreement on the order of registrations, we cannot know whether Alice owns the name or Bob does (did Bob make a false claim of registration after Alice already made one). Handshake has everyone run the same software rules so everyone can programmatically come to agreement on name ownership. When a name is registered, the owner has a cryptographic key which is under their control, which assigns ownership to themselves, and can write records on Handshake which identifies, authorizes, and locates resources associated with their name. As these records are also ordered, one can have greater assurance on whether the records are expired or current.</p></span>
+      </div>
+      <div class="question">
+        <h3>Does this promote carbon emissions?
+        <span><footer class='footer-caret-down' src='/img/footer/down-caret.svg' alt='Toggle expanded answer on mobile'/></span>
+        <span class='hide'><footer class='footer-caret-up' src='/img/footer/up-caret.svg' alt='Toggle expanded answer on mobile'/></span></h3>
+        <span><p>Handshake uses proof-of-work mining, as it is currently the most reliable way to do compact light client proofs. Proof of work uses computational power, a lot of it. However, the overwhelming majority of this computational power is produced using renewables, currently wind and hydro. The reason proof-of-work is currently primarily renewables is that the competitive cost has driven down to places with <i>excess</i> energy, which are remote hydro and wind farms. While there are no guarantees this will persist, the percentage which uses renewables is increasing. In the future, it is possible to have it be a contributor to subsidizing off-grid solar power. As the grid becomes less viable due to local generation, it is possible that miners securing the network can provide an additional revenue stream. This isn't certain, but a theory is that if mining is secured by solar, the network security would be much higher, as that would mean that it requires significant investment in physical infrastructure to attack. This benefits people with off-grid solar panels, as their electricity is otherwise worthless after their batteries are fully charged. While it is uncertain if this will prove to be the case and alternatives should be ready, currently the overwhelming majority of proof of work mining using renewables is increasing.</p></span>
+      </div>
+      <div class="question">
+        <h3>When is the first handshake?
+        <span><footer class='footer-caret-down' src='/img/footer/down-caret.svg' alt='Toggle expanded answer on mobile'/></span>
+        <span class='hide'><footer class='footer-caret-up' src='/img/footer/up-caret.svg' alt='Toggle expanded answer on mobile'/></span></h3>
+        <span><p>On the 615817th Bitcoin block height, the BTC blockhash will be committed into the Handshake genesis block. While it can be immediately mined, the genesis block is only locked in after six confirmations. After the first six confirmations of valid Bitcoin blocks, the genesis block will not change, even with a deep reorg. The code is available for <a href="/download">download</a>. Transactions will enabled after two weeks worth of blocks.
+        </p></span>
+      </div>
+
+
+
+
+      <h2 id="naming">NAMING</h2>
+      <div class="question">
+        <h3>How do Internet names currently work?
+        <span><footer class='footer-caret-down' src='/img/footer/down-caret.svg' alt='Toggle expanded answer on mobile'/></span>
+        <span class='hide'><footer class='footer-caret-up' src='/img/footer/up-caret.svg' alt='Toggle expanded answer on mobile'/></span></h3>
+        <span><p>When a domain name is resolved to a corresponding server in the IP space, it uses a recursive DNS resolver such as Google's Public DNS server. DNS servers query a number of root servers maintained by one of 12 centralized entities. These root servers serve the "root zone". The root zone is the collection of Top Level Domains (TLDs) like .com, .net, .org, etc. </p></span>
+      </div>
+      <div class="question">
+        <h3>Why does the Certificate Authority system benefit from decentralization?
+        <span><footer class='footer-caret-down' src='/img/footer/down-caret.svg' alt='Toggle expanded answer on mobile'/></span>
+        <span class='hide'><footer class='footer-caret-up' src='/img/footer/up-caret.svg' alt='Toggle expanded answer on mobile'/></span></h3>
+        <span><p>Compromised certificate authorities threaten SSL. Billions of dollars are currently being moved around on potentially insecure websites. If you’re personally identifiable as the owner of a valuable asset, there’s a risk to your personal safety. Even though WHOIS records have been scrubbed of private information — with the current naming system, your information can still be subpoenaed from a domain registrar. </p></span>
+      </div>
+      <div class="question">
+        <h3>What issues have occured with the centralized nature of the root zone and DNS as it currently stands?
+        <span><footer class='footer-caret-down' src='/img/footer/down-caret.svg' alt='Toggle expanded answer on mobile'/></span>
+        <span class='hide'><footer class='footer-caret-up' src='/img/footer/up-caret.svg' alt='Toggle expanded answer on mobile'/></span></h3>
+        <span><p>Certificate authorities and private owners of TLDs impose fees while often compromising the security of SSL by issuing bad certificates or cooperating with government attempts to spy on encrypted traffic or censor undesirable content. One common mechanism of Internet censorship that has been used with increasing and alarming frequency is DNS filtering and redirection. Another area where the centralized nature of Internet names has come to a head is domain registration privacy. Additionally, the way DNS is currently centered at a handful of choke points allows for DDoS attacks like we saw in the 2016 attack on Dyn. </p></span>
+      </div>
+      <div class="question">
+        <h3>Does Handshake replace DNS?
+        <span><footer class='footer-caret-down' src='/img/footer/down-caret.svg' alt='Toggle expanded answer on mobile'/></span>
+        <span class='hide'><footer class='footer-caret-up' src='/img/footer/up-caret.svg' alt='Toggle expanded answer on mobile'/></span></h3>
+        <span><p>No. Handshake is meant to replace the root zone file, not DNS. Browsing the web with human readable names is what Internet users have gotten acclimated to. Our solution allows for a seamless transition between a centralized name root zone file controlled by  private parties to a decentralized root zone file controlled by actual Internet users. The Handshake blockchain itself is essentially one big distributed zone file in which anyone has the right to add an entry in. </p></span>
+      </div>
+      <div class="question">
+        <h3>What can you do with Handshake and DNS now?
+        <span><footer class='footer-caret-down' src='/img/footer/down-caret.svg' alt='Toggle expanded answer on mobile'/></span>
+        <span class='hide'><footer class='footer-caret-up' src='/img/footer/up-caret.svg' alt='Toggle expanded answer on mobile'/></span></h3>
+        <span><p>Using OpenSSH, it’s possible to store SSH fingerprints in DNS. This means that if you're using a Handshake Name System (HNS) resolver, you can actually already verify SSH fingerprints in a decentralized way. This is possible without needing to install any additional, special SSH software. </p>
+              <p>DNS has an additional feature that allows you to verify TLS certificates by storing a hash of your ‘SubjectPublicKeyInfo’. This means that there is now a P2P way to trust self-signed certificates, as long as they have a valid DNSSEC trust chain set up. Anyone can set up a valid trust chain without having to ask anyone's permission to do so. </p></span>
+      </div>
+      <div class="question">
+        <h3>How is Handshake different from other decentralized naming projects?
+        <span><footer class='footer-caret-down' src='/img/footer/down-caret.svg' alt='Toggle expanded answer on mobile'/></span>
+        <span class='hide'><footer class='footer-caret-up' src='/img/footer/up-caret.svg' alt='Toggle expanded answer on mobile'/></span></h3>
+        <span><p>Many other decentralized naming systems did not allow for secure “light clients” (simple payment verification mode), forcing every potential user to run a full node, equivalent to saving all the domains in the world on your computer. Another key differentiator is that Handshake is the first to pre-reserve names for existing trademark name holders. </p></span>
+      </div>
+
+      <h2 id="grants">COMMUNITY GRANTS</h2>
+      <div class="question">
+        <h3>Why is there a grant of $10.2 million to nonprofits and free/open source projects?
+        <span><footer class='footer-caret-down' src='/img/footer/down-caret.svg' alt='Toggle expanded answer on mobile'/></span>
+        <span class='hide'><footer class='footer-caret-up' src='/img/footer/up-caret.svg' alt='Toggle expanded answer on mobile'/></span></h3>
+        <span><p>Handshake’s original incubators, Purse.io and Private Internet Access, provided enough support to build and launch the platform without additional funding. The pre-launch project contributors don’t require additional capital from subsequent investors, but what was needed is their deep expertise in early stage technology venture valuation. Accepting their investment at mutually agreed upon terms ensures Handshake launches at a reasonable valuation and enables the network to immediately bootstrap the decentralized market for Internet names. Beyond that Handshake has everything needed and that capital is better deployed by the FOSS organizations to which have been pledged to contribute it.
+        </p></span>
+      </div>
+      <div class="question">
+        <h3>Why are free and open source contributors receiving the majority of the initial HNS?
+        <span><footer class='footer-caret-down' src='/img/footer/down-caret.svg' alt='Toggle expanded answer on mobile'/></span>
+        <span class='hide'><footer class='footer-caret-up' src='/img/footer/up-caret.svg' alt='Toggle expanded answer on mobile'/></span></h3>
+        <span><p>The Internet, and civilization as a whole, would not be where it is today without the hard work of the free software and open source community and the projects that they work on. The Handshake blockchain will start with an initial supply of 1.36 billion coins, of which ~67.5% will be gifted to FLOSS developers and projects, as well as non profit organizations, universities. </p>
+        <p>Read more about it on the <a href="/grant-sponsors">FLOSS Pledge Page.</a></p></span>
+      </div>
+
+      <h2 id="using">USING HANDSHAKE</h2>
+      <div class="question">
+        <h3>How can trademark holders claim their names on HNS?
+        <span><footer class='footer-caret-down' src='/img/footer/down-caret.svg' alt='Toggle expanded answer on mobile'/></span>
+        <span class='hide'><footer class='footer-caret-up' src='/img/footer/up-caret.svg' alt='Toggle expanded answer on mobile'/></span></h3>
+        <span><p>Handshake is holding a ninety day sunrise period before launch to allow existing rights-holders to claim their trademarked names. This is in order to help the seamless transition from a centralized root zone file to a decentralized root zone file. Read more in our Handshake Name Trademark Disclaimer. </p></span>
+      </div>
+      <div class="question">
+        <h3>Why is Handshake pre-reserving the top tens of thousands of domain names according to Alexa.com?
+        <span><footer class='footer-caret-down' src='/img/footer/down-caret.svg' alt='Toggle expanded answer on mobile'/></span>
+        <span class='hide'><footer class='footer-caret-up' src='/img/footer/up-caret.svg' alt='Toggle expanded answer on mobile'/></span></h3>
+        <span><p>Existing TLDs and over 100,000 Alexa websites are reserved on the Handshake blockchain. Upon removing collisions, generic, and exclusions (e.g. 1 or 2 character names), approximately 80,000 names remain. Using the root key and DNSSEC, domain owners can cryptographically prove ownership to the Handshake blockchain to claim names. 100,000 was chosen as a number which the ownership is clear and has already gone through policy and process.</p></span>
+      </div>
+      <div class="question">
+        <h3>Why is Handshake allowing trademark holders to claim their names on HNS?
+        <span><footer class='footer-caret-down' src='/img/footer/down-caret.svg' alt='Toggle expanded answer on mobile'/></span>
+        <span class='hide'><footer class='footer-caret-up' src='/img/footer/up-caret.svg' alt='Toggle expanded answer on mobile'/></span></h3>
+        <span><p>Handshake is holding a sunrise period before launch to allow existing rights-holders to claim their trademarked names. This is in order to help the seamless transition from a centralized root zone file to a decentralized root zone file. Read more in the <a href="/trademark-disclaimer">Handshake Name Trademark Disclaimer</a>.</p></span>
+      </div>
+      <div class="question">
+        <h3>What is the challenge with secure name resolution?
+        <span><footer class='footer-caret-down' src='/img/footer/down-caret.svg' alt='Toggle expanded answer on mobile'/></span>
+        <span class='hide'><footer class='footer-caret-up' src='/img/footer/up-caret.svg' alt='Toggle expanded answer on mobile'/></span></h3>
+        <span><p>The largest challenge is the “key exchange problem.” This can be solved by putting the certificate and names on the blockchain and tying their ownership to private keys. This is Handshake’s key innovation on the root zone file. </p></span>
+      </div>
+      <div class="question">
+        <h3>How do I register a Handshake name?
+        <span><footer class='footer-caret-down' src='/img/footer/down-caret.svg' alt='Toggle expanded answer on mobile'/></span>
+        <span class='hide'><footer class='footer-caret-up' src='/img/footer/up-caret.svg' alt='Toggle expanded answer on mobile'/></span></h3>
+        <span><p>Handshake leverages a blockchain based on unspent transaction output (UTXO) and proof-of-work (PoW) similar to Bitcoin for naming capabilities. The naming system features an on-chain smart contract-like functionality called covenants which restrict the future use of outputs of a transaction. Because covenants are built in at the blockchain layer via the consensus protocol, the handshake system enables different types of smart contracts which is used to develop an auction system for individuals to bid on domain naming rights. </p></span>
+      </div>
+      <div class="question">
+        <h3>What does the Handshake names auction process look like?
+        <span><footer class='footer-caret-down' src='/img/footer/down-caret.svg' alt='Toggle expanded answer on mobile'/></span>
+        <span class='hide'><footer class='footer-caret-up' src='/img/footer/up-caret.svg' alt='Toggle expanded answer on mobile'/></span></h3>
+        <span><p>Users can buy or register domains through a Vickrey auction using HNS coins. All possible names are released weekly over the first year after launch. Users may submit blinded bids on the Handshake blockchain anytime after a name is released for auction. Bidding is open to everyone for ~5 days after the reveal period, and have ~10 days to reveal their bid price. A winner is assigned the name and, as it is a Vickrey auction, pays the second highest bid at the end of the reveal period. The winning bid amount of HNS coins is burned and permanently removed from circulation. Losing bids are returned and not burned. </p></span>
+      </div>
+      <div class="question">
+        <h3>How long are my names good for?
+        <span><footer class='footer-caret-down' src='/img/footer/down-caret.svg' alt='Toggle expanded answer on mobile'/></span>
+        <span class='hide'><footer class='footer-caret-up' src='/img/footer/up-caret.svg' alt='Toggle expanded answer on mobile'/></span></h3>
+        <span><p>Handshake names are registered for one year at a time. Names can be renewed annually by paying a standard network fee. There are no social or technical guarantees with the renewability or ownership, this is an experimental system, please read the code to see details of how it currently works.</p></span>
+      </div>
+      <div class="question">
+        <h3>Who gets the renewal fee?
+        <span><footer class='footer-caret-down' src='/img/footer/down-caret.svg' alt='Toggle expanded answer on mobile'/></span>
+        <span class='hide'><footer class='footer-caret-up' src='/img/footer/up-caret.svg' alt='Toggle expanded answer on mobile'/></span></h3>
+        <span><p>Renewals for names are bi-annual and cost a standard network fee. Currently, miners will receive the transaction fee as part of their block reward.</p></span>
+      </div>
+      <div class="question">
+        <h3>How do I transfer ownership of a name?
+        <span><footer class='footer-caret-down' src='/img/footer/down-caret.svg' alt='Toggle expanded answer on mobile'/></span>
+        <span class='hide'><footer class='footer-caret-up' src='/img/footer/up-caret.svg' alt='Toggle expanded answer on mobile'/></span></h3>
+        <span><p>If someone owns a name directly, the current owner can give the destination address/key to the new recipient. Sender creates a transaction to send the domain to receiver, and a block is mined on the blockchain. One week after the transaction is confirmed, it is locked in. Transferring ownership may also have payments embedded, so the recipient will receive coins if and only if the transfer is successful. This means that users do not need to use 3rd party escrow to pay for transfer. </p></span>
+      </div>
+    </div>
+  </div></section>
+
+  </div> 
+</div> 
+
+ 
+
+<footer id='footer'>
+<!-- the onboarding pages and dashboard use the small footer -->
+  
+    <div class='footer-wrap'>
+  <nav>
+    <div class='header'>
+      <h3>Handshake</h3>
+      <span><img class='footer-caret-down' src='/img/footer/down-caret.svg' alt='Toggle expanded menu on mobile'/></span>
+      <span><img class='footer-caret-up hide' src='/img/footer/up-caret.svg' alt='Toggle expanded menu on mobile'/></span>
+    </div>
+    <div class='links'>
+      <a href='/'>Home</a>
+      <a href='/community'>Community</a>
+    </div>
+  </nav>
+
+  <nav>
+    <div class='header'>
+      <h3>Learn</h3>
+      <span><img class='footer-caret-down' src='/img/footer/down-caret.svg' alt='Toggle expanded menu on mobile'/></span>
+      <span><img class='footer-caret-up hide' src='/img/footer/up-caret.svg' alt='Toggle expanded menu on mobile'/></span>
+    </div>
+    <div class='links'>
+      <a href='/faq'>FAQ</a>
+      <a href='/files/handshake.txt'>Design Notes</a>
+    </div>
+  </nav>
+
+  <nav>
+    <div class='header'>
+      <h3>Develop</h3>
+      <span><img class='footer-caret-down' src='/img/footer/down-caret.svg' alt='Toggle expanded menu on mobile'/></span>
+      <span><img class='footer-caret-up hide' src='/img/footer/up-caret.svg' alt='Toggle expanded menu on mobile'/></span>
+    </div>
+    <div class='links'>
+      <a href='https://handshake-org.github.io'>Documentation</a>
+      <a href='https://github.com/handshake-org/hsd'>Run a full node</a>
+      <a href='https://github.com/handshake-org/hnsd'>Install an SPV resolver</a>
+      <a href='https://handshake-org.github.io/guides/auctions.html'>Auction system guide</a>
+    </div>
+  </nav>
+
+  <!-- Keeps things in line -->
+  <nav style="display:none;">
+  </nav>
+</div><!-- close center-wrap -->
+
+
+
+  
+    <div class='footer-wrap bottom-wrap'>
+      <a href='/'>
+        Home
+      </a>
+      <a href='/terms-of-use'>
+        Terms of Use
+      </a>
+      <a href='/privacy-policy'>
+          Privacy Policy
+      </a>
+      <a href='/trademark-disclaimer'>
+          Trademark Disclaimer
+      </a>
+
+      <nav class='social-icons-small-footer'>
+        <a href='https://github.com/handshake-org/'>
+          <img src='/img/footer/github.svg' alt='GitHub logo'/>
+        </a>
+        <a href='https://twitter.com/hns'>
+          <img src='/img/footer/twitter.svg' alt='Twitter logo'/>
+        </a>
+        <a href='https://reddit.com/r/handshake'>
+          <img src='/img/footer/reddit.svg' alt='Reddit logo'/>
+        </a>
+      </nav>
+    </div>
+  
+
+</footer>
+
+<script src='/js/footer.js'></script>
+<script src='/js/nav.js'></script>
+<script>
+  window.addEventListener("load", function(e) {
+    document.documentElement.className = '';
+  });
+</script>
+
+  <!--<script src='/js/faq.js'></script>
+  <script>
+  window.addEventListener("load", function(e) {
+    document.documentElement.className = '';
+  });
+</script>-->
+
+
+</body>
+</html>
