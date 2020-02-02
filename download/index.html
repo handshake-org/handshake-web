@@ -102,7 +102,6 @@
 
   <section class="default"><div class="section-wrapper"><div>
     <div>
-      <p><b>Extras</b></p>
       <p><a href="https://handshake.org/files/hs-airdrop-0.7.0.tar.gz">hs-airdrop</a> (<a href="https://handshake.org/files/hs-airdrop-0.7.0.tar.gz.asc">asc</a>)</p>
       <p><a href="https://handshake.org/files/hs-miner-0.0.10.tar.gz">hs-miner</a> (<a href="https://handshake.org/files/hs-miner-0.0.10.tar.gz.asc">asc</a>)</p>
     </div>
@@ -111,11 +110,9 @@
   <section class="light"><div class="section-wrapper"><div>
     <div>
       <p>Tarballs are signed using keybase.io/chjj</p>
-      <p>On BTC block 615817, Handshake will begin processing blocks. Transactions will begin around two weeks later per the consensus rules. This is an experimental project and software, please pay attention to community channels for updates.</p>
       <p>The genesis block will include the blockhash of BTC block 615817 and the genesis block will be initialized using the genesis initialization script:</p>
       <p>&nbsp;&nbsp;&nbsp;&nbsp;bin/genesis</p>
       <p>Anyone can generate the genesis block once the BTC block is mined using the genesis initialization script. The HNS genesis block is treated as locked in once there have been six BTC confirmations (and the HNS genesis will not change even in the event of a large BTC reorg). It is expected that Handshake mining will begin immediately once BTC block 615817 is mined, however, the genesis block will only be treated as valid after six confirmations. In the event of a reorg with 1 to 5 BTC block confirmations, the first to reach and propagate six confirmations will prevail. This method ensures fairness across the Handshake network, as no party has foreknowledge of the HNS genesis block within reasonable doubt.</p>
-      <p>Connectivity may be spotty and reorgs may be deep initially, as it is difficult to predict initial hashpower.</p>
     </div>
   </div></div></section>
   </div> 
