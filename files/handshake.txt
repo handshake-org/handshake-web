@@ -2103,8 +2103,8 @@ general. Further, no guarantees are provided with coin supply, coin value, or
 name value. In the event of a worldwide distribution, it is up to the wider
 community to execute this plan.
 
-Project developers involved before the mainnet launch have committed to never
-make unilateral advocacy of where the blockchain should go, and any rhetoric
+Those making unilateral advocacy of where the blockchain should go under the
+auspicies of being an early developer of the chain, and any rhetoric related
 should be seen with suspicion. It is up to the community to suggest changes and
 any code forks are initiated with community consensus and approval.
 
@@ -2113,16 +2113,16 @@ acknowledging new state updates. It is heavily recommended for service providers
 to have long deposit times and their own internal controls and software
 verification.
 
-Hard forks are presumed to be possible in this system, for example, with the
-proposed hard fork for the global distribution to all of humanity. All hard
-forks are only valid upon community consent.
+Hard forks are presumed to be possible in this system, there are no guarantees
+around mining, economics, etc.
 
 Trademark holders are responsible for munging their own renewals and
-registrations, and the project developers do not have the ability to make
+registrations, and project developers do not have the ability to make
 unilateral changes to the system after the sunrise period. Any changes to the
-name ownership requires a hard fork and is contingent upon community approval of
-fullnodes and miners. Any changes after the sunrise period should be proposed to
-the community as a hardfork.
+records requires a hard fork and is contingent upon community approval of
+fullnodes and miners. Any changes after the sunrise period may be proposed
+to the community as a hardfork, or more likely the updates should be made
+(without consensus) in the resolver client-side.
 
 No guarantees are provided for transaction formats past one year. Pre-signed
 transactions should not be presumed to be permanently available. Private keys
