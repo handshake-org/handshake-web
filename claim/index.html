@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+
+<html lang='en'>
+<head>
+
+  <title>Handshake</title>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+	<meta name="description" content="Decentralized certificate authority and naming" />
+	<meta property="og:title" content="Handshake" />
+	<meta property="og:description" content="Decentralized certificate authority and naming" />
+	<meta property="og:url" content="https://handshake.org" />
+	<meta property="og:image" content="https://www.handshake.org/images/landing/logo-dark.svg" />
+
+  <link rel="shortcut icon" href="/img/favicon/hns-favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="/css/fonts/nitti.css" />
+  <link rel="stylesheet" type="text/css" href="/css/fonts/ibmplexmono.css" />
+  <link rel="stylesheet" type="text/css" href="/css/fonts/ibmplexsans.css" />
+  <link rel="stylesheet" type="text/css" href="/css/footer.css"/>
+
+  
+    <link rel="stylesheet" type="text/css" href="/css/marketing.css" />
+  
+  <style type="text/css">
+    .no-fouc {display: none;}
+</style>
+
+<script type="text/javascript">
+    document.documentElement.className = 'no-fouc';
+</script>
+
+</head>
+
+<body class="light">
+
+
+  <header><div class="header-wrapper"><div class="inner-wrapper">
+    <nav id="navBar" class="no-js nav-bar">
+
+  
+    <div id='nav-toggle' class="burgermenu" href="#">☰</div>
+
+    <div id='overlay'></div>
+    <div id="burgernav">
+      <ul>
+
+          <li><a href="https://handshake-org.github.io">Documentation</a></li>
+          <li><a href="/community">Community</a></li>
+          <li><a href="/faq">Faq</a></li>
+          
+          
+      </ul>
+    </div>
+  
+
+  <a class="nav-logo" href="/">
+    <img class='logo logo-dark' src='/images/landing/logo-dark.svg' /><img class='logo logo-light' src='/images/landing/logo-light.svg' />
+  </a>
+
+  
+    <div class="nav-right ">
+      <div class="nav-links "">
+          <ul>
+            
+
+              <li><a href="https://handshake-org.github.io">Documentation</a></li>
+              <li><a href="/community">Community</a></li>
+              <li><a href="/faq">Faq</a></li>
+              
+              
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+  
+</nav>
+
+  </div></div></header>
+
+  <div class="content">
+    <div class="wrapper">
+      
+
+
+<section class="claim default"><div class="section-wrapper"><div class='hero-no-split'>
+  <h1>Claim HNS</h1>
+</div></div></section>
+
+<section class="light claim"><div class="section-wrapper"><div>
+  <p><a href="https://github.com/handshake-org/hs-airdrop">Detailed information available in the hs-airdrop README.md file.</a></p>
+  <p><b>Please be careful about using other software or giving away your private key to others. Handshake is an experiment in decentralized allocation of ownership of the network to the open source community. If this model is successful, people may replicate this distribution model in giving ownership to Open Source Developers and Organizations, giving away your private key prevents you from claiming other systems. This HNS airdrop is a native limited resource used to register top-level domains and usernames (a limited resource is needed in decentralized naming systems, as a single bad actor can register all useful names in existence).</b></p>
+  <p>This page explains how <b>github developers with over 15 followers on February 2019</b>, or in the <b>PGP WoT Strong Set</b> can claim. Being able to claim does NOT imply that one is a "top open source developer", this system was optimized for a list of scrapeable keys (and could not be modified after the Handshake network launches without a hard fork).</p>
+  <p><b>Using 3rd-party claim tools may give away ownership and control of your HNS.</b></p>
+  <h2>System Setup</h2>
+  <p>Please read through these instructions carefully, as using cryptographic blockchains are a bit unusual.</p>
+  <p>Make sure you have nodejs and npm installed first. On MacOS, please install <a href="https://brew.sh">homebrew</a> and run "<b>brew install node</b>". On debian/ubuntu, you can run "<b>sudo apt-get install nodejs npm build-essential</b>". If you run other distributions or OSes, you can probably figure this part out.</p>
+  <p>Next, install node-gyp: <b>npm install node-gyp</b></p>
+  <h2>Download</h2>
+  <p>Download <b>hsd</b>, <b>hs-client</b>, and <b>hs-airdrop</b> from <a href="https://handshake.org/download/">https://handshake.org/download/</a>. If downloaded from github, the directory structure is slightly different (hsd-2.0.2/hsd should be replaced with hsd-2.0.2 in these instructions).</p>
+  <p>Extract hsd, hs-client, and hs-airdrop: <b>tar xvf hs*</b></p>
+  <p>You may also verify the asc file if desired.</p>
+  <h2>Install</h2>
+  <p>In one window, change into the hsd directory and install <b>cd hsd-2.0.2/hsd</b> and then run <b>npm install --production</b></p>.
+  <p>In the second window, change into the hs-client directory and install <b>cd hs-client-0.0.8/hs-client</b> and then run <b>npm install --production</b></p>
+  <h2>Run hsd</h2>
+  <p>hsd is the handshake fullnode and will sync with the network</p>
+  <p>To connect, in the first window run: <b>./bin/hsd</b></p>
+  <h2>Get your address</h2>
+  <p>To claim your airdrop, you need an HNS address to send the coins to. To generate one, in the second window run:</p>
+  <p><b>./bin/hsw-cli account get default | grep receiveAddress</b></p>
+  <p>You should see a string of random looking characters beginning with <b>hs1</b>. The entire string inside the quotes is your public address (you this address is public and can be shared). <b>Copy this address and save it</b></p>
+  <p>To save a copy of your private key, write down the output of the 12 word phrase on a piece of paper (do not save it in the cloud anywhere): <b>./bin/hsw-cli master | grep phrase</b></p>
+  <h2>Claim your HNS</h2>
+  <p>In the second window, go to the hs-airdrop directory and install hs-airdrop:</p>
+  <p><b>cd hs-airdrop-0.7.1/hs-airdrop</b></p>
+  <p>Then install the dependencies: <b>npm install --production</b></p>
+  <p>Check if your key is in the airdrop. Replace id_rsa with the location of your key you want to check and the hs1XXXX string with the public address you generated earlier. Please see the hs-airdrop README.md file for more information.</p>
+  <p>./bin/hs-airdrop ~/.ssh/id_rsa hs1XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
+  <p>This may take a while, as it is trying to find and decrypt a message to your key. If successful you should see a base64 string. A NonceError means your key was not included, you can try another key.</p>
+  <p>If you have a base64 string, you can broadcast it to the network by going back to hs-client (<b>cd hs-client-0.0.8/hs-client</b>) and typing (replace BASE64_STRING with the string dumped from hs-airdrop: <b>./bin/hsd-cli rpc sendrawairdrop BASE64_STRING</b></p>
+  <p>You should see it return a hex hash if successful. In an hour or two you should see it propogate over the network. You can see the updated balance by running: <b>./bin/hsw-cli balance</b></p>
+  <p>You can also try searching for your hs1 address balance by googling/searching: <b>hns block explorer</b> in your web browser and pasting in your hs1 address.</p>
+  <h2>Bidding on names</h2>
+  <p>After about a day for the redemption to clear on the network, you can use your HNS to register top-level domains (which could also be useful for usernames on systems which use Handshake). Replace NAME with your desired name. Please see the documentation on <a href="https://hsd-dev.org/guides/auctions.html">auctions</a> and <a href="https://hsd-dev.org/guides/protocol.html">prpotocol summary</a> for more information.</p>
+  <p>Name status (week in which it will be released): <b>./bin/hsd-cli rpc getnameinfo NAME</b></p>
+  <p>Open for bidding (if name is not being opened): <b>./bin/hsw-cli rpc sendopen NAME</b></p>
+  <p>Send bid (5 is an example bid amount and 10 is your blinding mask, see documentation): <b>./bin/hsw-cli rpc sendbid NAME 5 10</b></p>
+  <p>Reveal bid (YOU MUST REVEAL AFTER BIDDING IS CLOSED WITHIN 10-BLOCK-DAYS OR YOU WILL LOSE YOUR COINS, SEE DOCUMENTATION): <b>hsw-cli rpc sendreveal NAME</b></p>
+  <p>Get information on current auction: <b>./bin/hsw-cli rpc getauctioninfo</b></p>
+  <p>If lost auction, refund coins back to yourself: <b>./bin/hsw-cli rpc sendredeem</b></p>
+  <p>See the documentation on more commands, such as renewals which must be made at least every two years.</p>
+  <h2>Summary</h2>
+  <p>Handshake is a decentralized naming network with the majority ownership of initial coins are distributed to open source developers with available scrapeable keys. Certain kinds of decentralized systems were not historically possible as some entities could overwhelm the network and claim all the resources (in this case, register all names). Handshake is an experiment in giving the open source community the majority ownership of this network as a method to bootstrap a decentralized network with limited resources to prevent griefers taking up all the resources. It is hoped that this system could be used as a method wherever decentralized key authentication of names is needed (e.g. decentralized web applications where an association between a name and a cryptographic key proving ownership of that name). This could be used to prove the owner of a name published a document, and distributed across a decentralized network.</p>
+</div></div></section>
+
+</div> 
+</div> 
+
+
+
+<footer id='footer'>
+<!-- the onboarding pages and dashboard use the small footer -->
+  
+    <div class='footer-wrap'>
+  <nav>
+    <div class='header'>
+      <h3>Handshake</h3>
+      <span><img class='footer-caret-down' src='/img/footer/down-caret.svg' alt='Toggle expanded menu on mobile'/></span>
+      <span><img class='footer-caret-up hide' src='/img/footer/up-caret.svg' alt='Toggle expanded menu on mobile'/></span>
+    </div>
+    <div class='links'>
+      <a href='/'>Home</a>
+      <a href='/community'>Community</a>
+    </div>
+  </nav>
+
+  <nav>
+    <div class='header'>
+      <h3>Learn</h3>
+      <span><img class='footer-caret-down' src='/img/footer/down-caret.svg' alt='Toggle expanded menu on mobile'/></span>
+      <span><img class='footer-caret-up hide' src='/img/footer/up-caret.svg' alt='Toggle expanded menu on mobile'/></span>
+    </div>
+    <div class='links'>
+      <a href='/faq'>FAQ</a>
+      <a href='/files/handshake.txt'>Design Notes</a>
+    </div>
+  </nav>
+
+  <nav>
+    <div class='header'>
+      <h3>Develop</h3>
+      <span><img class='footer-caret-down' src='/img/footer/down-caret.svg' alt='Toggle expanded menu on mobile'/></span>
+      <span><img class='footer-caret-up hide' src='/img/footer/up-caret.svg' alt='Toggle expanded menu on mobile'/></span>
+    </div>
+    <div class='links'>
+      <a href='https://handshake-org.github.io'>Documentation</a>
+      <a href='https://github.com/handshake-org/hsd'>Run a full node</a>
+      <a href='https://github.com/handshake-org/hnsd'>Install an SPV resolver</a>
+      <a href='https://handshake-org.github.io/guides/auctions.html'>Auction system guide</a>
+    </div>
+  </nav>
+
+  <!-- Keeps things in line -->
+  <nav style="display:none;">
+  </nav>
+</div><!-- close center-wrap -->
+
+
+
+  
+    <div class='footer-wrap bottom-wrap'>
+      <a href='/'>
+        Home
+      </a>
+      <a href='/terms-of-use'>
+        Terms of Use
+      </a>
+      <a href='/privacy-policy'>
+          Privacy Policy
+      </a>
+      <a href='/trademark-disclaimer'>
+          Trademark Disclaimer
+      </a>
+
+      <nav class='social-icons-small-footer'>
+        <a href='https://github.com/handshake-org/'>
+          <img src='/img/footer/github.svg' alt='GitHub logo'/>
+        </a>
+        <a href='https://twitter.com/hns'>
+          <img src='/img/footer/twitter.svg' alt='Twitter logo'/>
+        </a>
+        <a href='https://reddit.com/r/handshake'>
+          <img src='/img/footer/reddit.svg' alt='Reddit logo'/>
+        </a>
+      </nav>
+    </div>
+  
+
+</footer>
+
+<script src='/js/footer.js'></script>
+<script src='/js/nav.js'></script>
+<script>
+  window.addEventListener("load", function(e) {
+    document.documentElement.className = '';
+  });
+</script>
+
+</body>
+</html>
