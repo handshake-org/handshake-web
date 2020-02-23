@@ -128,11 +128,11 @@
   <p>Name status (week in which it will be released): <b>./bin/hsd-cli rpc getnameinfo NAME</b></p>
   <p>Open for bidding (if name is not being opened): <b>./bin/hsw-cli rpc sendopen NAME</b></p>
   <p>Send bid (5 is an example bid amount and 10 is your blinding mask, see documentation): <b>./bin/hsw-cli rpc sendbid NAME 5 10</b></p>
-  <p>Reveal bid (YOU MUST REVEAL AFTER BIDDING IS CLOSED WITHIN 10-BLOCK-DAYS OR YOU WILL LOSE YOUR COINS, SEE DOCUMENTATION): <b>hsw-cli rpc sendreveal NAME</b></p>
+  <p>Reveal bid (YOU MUST REVEAL AFTER BIDDING IS CLOSED WITHIN 10-BLOCK-DAYS OR YOU WILL LOSE YOUR COINS, SEE DOCUMENTATION): <b>./bin/hsw-cli rpc sendreveal NAME</b></p>
   <p>If lost auction, refund coins back to yourself: <b>./bin/hsw-cli rpc sendredeem</b></p>
   <p>Get a list of all names and the current state: <b>./bin/hsd-cli rpc getnames</b></p>
   <p>See the documentation on more commands, such as renewals which must be made at least every two years.</p>
-  <p>Try googling for <b>hns block explorer</b> or looking on an HNS Exchange for a list of bid blinds and bid status of names.</p>
+  <p>Try googling/searching for <b>hns block explorer</b> or looking on an HNS Exchange for a list of bid blinds and bid status of names.</p>
   <h2>Summary</h2>
   <p>Handshake is a decentralized naming network with the majority ownership of initial coins are distributed to open source developers with available scrapeable keys. Certain kinds of decentralized systems were not historically possible as some entities could overwhelm the network and claim all the resources (in this case, register all names). Handshake is an experiment in giving the open source community the majority ownership of this network as a method to bootstrap a decentralized network with limited resources to prevent griefers taking up all the resources. It is hoped that this system could be used as a method wherever decentralized key authentication of names is needed (e.g. decentralized web applications where an association between a name and a cryptographic key proving ownership of that name). <b>In other words, an association between keys and names create the potential for the decentralized web by allocating cyrptographically provable resources to names.</b> This could be used to prove the owner of a name published a document, and distributed across a decentralized network. The more applications using this system to secure/prove documents in a decentralized way, the higher the useful aggregate economic/social value of registered names on Handshake (Metcalfe's Law).</p>
 </div></div></section>
