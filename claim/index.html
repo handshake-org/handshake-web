@@ -92,7 +92,7 @@
 
 <section class="light claim"><div class="section-wrapper"><div>
   <p><a href="https://github.com/handshake-org/hs-airdrop">Detailed information available in the hs-airdrop README.md file.</a></p>
-  <p><b>Please be careful about using other software or giving away your private key to others. Handshake is an experiment in decentralized allocation of ownership of the network to the open source community. If this model is successful, people may replicate this distribution model in giving ownership to Open Source Developers and Organizations, giving away your private key prevents you from claiming other systems. This HNS airdrop is a native limited resource used to register top-level domains and usernames (a limited resource is needed in decentralized naming systems, as a single bad actor can register all useful names in existence).</b></p>
+  <p><b>Please be careful about using other software or giving away your private key to others. Handshake is an experiment in decentralized allocation of ownership of the network to the open source community. If this model is successful, people may replicate this distribution model in giving ownership to Open Source Developers and Organizations, giving away your private key prevents you from claiming other systems. This HNS airdrop is a native limited resource used to register top-level domains and usernames (a limited resource is needed in decentralized naming systems, as a single bad actor would register all useful names in existence if no limited resources existed).</b></p>
   <p>This page explains how <b>github developers with over 15 followers on February 2019</b>, or in the <b>PGP WoT Strong Set</b> can claim. Being able to claim does NOT imply that one is a "top open source developer", this system was optimized for a list of scrapeable keys (and could not be modified after the Handshake network launches without a hard fork).</p>
   <p><b>Using 3rd-party claim tools may give away ownership and control of your HNS.</b></p>
   <h2>System Setup</h2>
@@ -119,7 +119,7 @@
   <p><b>cd hs-airdrop-0.7.1/hs-airdrop</b></p>
   <p>Then install the dependencies: <b>npm install --production</b></p>
   <p>Check if your key is in the airdrop. Replace id_rsa with the location of your key you want to check and the hs1XXXX string with the public address you generated earlier. Please see the hs-airdrop README.md file for more information.</p>
-  <p>./bin/hs-airdrop ~/.ssh/id_rsa hs1XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
+  <p><b>./bin/hs-airdrop ~/.ssh/id_rsa hs1XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</b></p>
   <p>This may take a while, as it is trying to find and decrypt a message to your key. If successful you should see a base64 string. A NonceError means your key was not included, you can try another key.</p>
   <p>If you have a base64 string, you can broadcast it to the network by going back to hs-client (<b>cd hs-client-0.0.8/hs-client</b>) and typing (replace BASE64_STRING with the string dumped from hs-airdrop: <b>./bin/hsd-cli rpc sendrawairdrop BASE64_STRING</b></p>
   <p>You should see it return a hex hash if successful. In an hour or two you should see it propogate over the network. You can see the updated balance by running: <b>./bin/hsw-cli balance</b></p>
