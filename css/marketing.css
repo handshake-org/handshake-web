@@ -1183,6 +1183,14 @@ section.default {
 .bio ul li {
   line-height: 34px; }
 
+.notice {
+  font-family: Open Sans;
+}
+
+.timeline {
+  line-height: 1.5em;
+}
+
 @media(min-width: 1200px) {
   .hero-no-split {
     text-align: center; }
