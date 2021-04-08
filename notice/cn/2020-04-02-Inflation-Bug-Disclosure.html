@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html lang='en'>
+<head>
+
+  <title>Handshake Re-Claim Inflation Bug: Full Disclosure</title>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+  <meta name="description" content="Handshake Re-Claim Inflation Bug: Full Disclosure" />
+  <meta property="og:title" content="Handshake Re-Claim Inflation Bug: Full Disclosure" />
+  <meta property="og:description" content="Handshake Re-Claim Inflation Bug: Full Disclosure" />
+  <meta property="og:url" content="https://handshake.org/notice/2020-04-01-Inflation-Bug-Disclosure.html" />
+  <meta property="og:image" content="https://www.handshake.org/images/landing/logo-dark.svg" />
+
+  <link rel="shortcut icon" href="/img/favicon/hns-favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="/css/fonts/nitti.css" />
+  <link rel="stylesheet" type="text/css" href="/css/fonts/ibmplexmono.css" />
+  <link rel="stylesheet" type="text/css" href="/css/fonts/ibmplexsans.css" />
+  <link rel="stylesheet" type="text/css" href="/css/footer.css"/>
+
+  
+    <link rel="stylesheet" type="text/css" href="/css/marketing.css" />
+  
+  <style type="text/css">
+    .no-fouc {display: none;}
+</style>
+
+<script type="text/javascript">
+    document.documentElement.className = 'no-fouc';
+</script>
+
+</head>
+
+<body class="light">
+
+
+  <header><div class="header-wrapper"><div class="inner-wrapper">
+    <nav id="navBar" class="no-js nav-bar">
+
+  
+    <div id='nav-toggle' class="burgermenu" href="#">☰</div>
+
+    <div id='overlay'></div>
+    <div id="burgernav">
+      <ul>
+
+          <li><a href="https://handshake-org.github.io">Documentation</a></li>
+          <li><a href="/community">Community</a></li>
+          <li><a href="/faq">Faq</a></li>
+          
+          
+      </ul>
+    </div>
+  
+
+  <a class="nav-logo" href="/">
+    <img class='logo logo-dark' src='/images/landing/logo-dark.svg' /><img class='logo logo-light' src='/images/landing/logo-light.svg' />
+  </a>
+
+  
+    <div class="nav-right ">
+      <div class="nav-links "">
+          <ul>
+            
+
+              <li><a href="https://handshake-org.github.io">Documentation</a></li>
+              <li><a href="/community">Community</a></li>
+              <li><a href="/faq">Faq</a></li>
+              
+              
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+  
+</nav>
+
+  </div></div></header>
+
+  <div class="content">
+    <div class="wrapper">
+      
+
+
+<section class="notice default"><div class="section-wrapper"><div class='hero-no-split'>
+  <h1>再次声明引发的通货漏洞: 全方位纰漏</h1>
+</div></div></section>
+
+<section class="notice light"><div class="section-wrapper"><div>
+  <h2>摘要</h2>
+  <p>
+    用户的HNS，名字和HNS 主域内容数据没有风险。在握手协议中发现一个缺陷，该缺陷可能使HNS总量超出预先的设计。拥有一个保留域名的用户可以通过修改他们的钱包，生成额外的HNS.最坏的情况下，一个恶意的矿工可以在每一个区块中生成近乎无限的HNS。
+    这个漏洞从来没有被利用，目前已经修复。
+    矿工们和挖矿的相关软件必须尽快更新他们的全节点。 相关用户必须尽快更新如下的软件:
+  </p>
+  <p>
+    • <a href="/download">hsd v2.4.0</a><br>
+    • <a href="https://bobwallet.io">Bob Wallet v0.7.0 </a>
+  </p>
+</div></div></section>
+
+<section class="notice default timeline"><div class="section-wrapper"><div>
+  <h2>事件过程</h2>
+  <p>(所有的时间均为 UTC 标准时间（UTC+0))</p>
+  <strong> 2021年3月24日16点</strong><br>
+      Matthew Zipkin 发现这个协议缺陷，并且发送一个加密邮件给 Christopher Jeffrey (JJ) ，同时邮件中包含了一个缺陷的描述和一个演示攻击的测试 。 JJ 确认了这个缺陷很快联系了Zipkin 讨论出一个解决方案。 Zipkin 运行了 相关脚本，并确认该缺陷在当前的区块链网络上没有被利用。<br><br>
+  <strong> 2021年3月24日18点</strong><br>
+      Joseph Poon 收到这个通知，同时帮助制定出一个代码的修复开发计划。 JJ 开始编写hsd 的补丁代码，同时共享给 Zipkin 修复开发计划逐渐形成。<br><br>
+  <strong> 2021年3月25日7点</strong><br>
+      JJ 和团队共享了新版本的补丁，该补丁中包含了 Zipkin 建议的未公开的软件分支。<br><br>
+  <strong> 2021年3月25日18点</strong><br>
+      联系鱼池通知这个事件。<br><br>
+  <strong> 2021年3月28日1点</strong><br>
+      JJ 把最终的补丁发给 Zipkin 检查并测试。最终的补丁中包含了对链的重组添加了额外的保护机制，为了防止链的分叉。<br><br>
+  <strong> 2021年3月28日3点</strong><br>
+      联系鱼池和Poolin把补丁发送给他们开始更新。更新机制生效在 #61038 区块 和 #61039 区块。联系大象矿池。<br><br>
+  <strong> 2021年3月29日8点</strong><br>
+      大象矿池更新。修复率接达到 70% 。<br><br>
+  <strong> 2021年3月29日23点</strong><br>
+      联系 Urkel 矿池。<br><br>
+  <strong> 2021年3月30日13点</strong><br>
+      联系 ViaBTC 和 火币 . 补丁发送给 Urkel Pool 和 ViaBTC 同时完成更新。<br><br>
+  <strong> 2021年3月31日0点</strong><br>
+      修复率达到80%。联系 Bob 钱包。<br><br>
+  <strong> 2021年3月31日2点</strong><br>
+      火币拿到补丁完成更新。<br><br>
+  <strong> 2021年4月1日22点</strong><br>
+      修复率达到 90%。再次联系 Namebase 和 Bob Wallet 已通知部署计划。<br><br>
+  <strong> 2021年4月2日16点</strong><br>
+      补丁发布在 hsd v2.4.0 同时包含在 Bob Wallet v0.7.0。完成的纰漏发布
+</div></div></section>
+
+<section class="notice light"><div class="section-wrapper"><div>
+  <h2>详细描述</h2>
+  <p>
+    Handshake的协议允许传统DNS中域名所有者在Handshake的区块链系统中声明他们的域名。声明过程需要一个DNSSEC证明，该证明会通过一个特殊的转账提交到handshake网络。这种机制意味着 传统DNS的恶意活动可以扰乱我们的Handshake系统。在这个事件中， JJ 讨论了一个 "如果godaddy被入侵" 的解决方案。这个解决方案就是，在需要声明的域名完成注册之前，添加30天的锁定时间，同时要求传统域名所有者重新提交一次声明在他们完成注册之前。这些声明生成了新的HNS作为奖励，但是只有最后的域名的声明可以使用这笔奖励，这样保持了这笔奖励的完整性。然而，每次声明的时候支付给矿工的费用并没有受到保护。这意味着，如果一个人重新提交一次声明，他们需要再支付额外的费用，这笔费用没有完成原有设计协议的记录，这样膨胀了HNS的提供。由于费用是由提交索赔的用户选择的，因此可以故意利用该漏洞生成无限的HNS。
+  </p>
+  <p>
+    幸运的是，hsd钱包目前不允许用户重新声明（但它应该支持，而且很快就会支持）。然而，一个好奇的用户可能会编辑钱包的代码，并强迫它向网络提交一个新的声明，意外地利用了这个漏洞。 例如，如果用户丢失了用于生成初始声明的密钥（这意味着在证明中使用的实际TXT记录），他们可以尝试使用另一个钱包生成新的密钥，并提交重新索赔。请注意，额外产生的币是作为一种费用给一个矿工，是不可消费的索赔人。恶意矿工可能与遗留名称持有者合作或获得保留的遗留名称，并在开采的每个区块提交新的开采权，可能会向自己支付名称报酬的100%作为费用。
+  </p>
+  <p>
+    例如，如果用户丢失了他们用来生成初始索赔的密钥(意思是证明中使用的实际TXT记录)，他们可能试图用另一个钱包生成一个新的请求，并提交重新索赔。 请注意，额外生成的硬币是作为一种费用赠送给矿工的，索赔人无法使用。 一个恶意的矿商可以与一个遗留名称持有人合作，或者获得一个保留的遗留名称，并向他们挖掘的每个区块提交了一份新的索赔要求，这可能会为自己支付100%的名称奖励作为费用。 这个缺陷不仅仅是一个可以用软件补丁修复的实现bug。 握手协议的设计是一个问题，它影响到每个用户和所有hsd的完整节点。 解决这类问题的唯一方法是使用软叉，它为协议添加了新的规则，由矿工执行。 具体来说，矿商运行新的代码，防止重新索赔加剧货币供应。 由于缺陷的严重程度和执行难度低，问题必须向有限的各方披露，而且非常仔细。 团队最初联系了F2Pool（鱼池）和Poolin（两个矿池），因为它们加在一起占了网络散率的50%以上。 一旦51%的hashrate被修补了，就存在了一个潜在的结果，一个少数矿商可能会在不知情的情况下挖掘出一个新规则下无效的区块。 这个区块将被大多数矿工从链上被撬开。 这就是为什么一旦将51%的hashrate升级，少数族裔矿泉就会尽快得到通知。
+  </p>
+  <p>
+    最后，补丁必须部署到运行完整节点的所有用户。 这一过程反映了部署的优先级和权衡:<br>
+    1。 保护用户免受通胀攻击(升级大部分hashrate)。 <br>
+    2。 保护矿工彼此不受伤害(升级剩下的hashrate)。<br>
+    3 . 保护用户免受矿工的伤害(尽可能广泛地部署补丁)。 <br>
+    通常，软分支是广泛宣传的，部署是显而易见的，但这是一个敏感的问题:在新协议规则到位并以尽可能多的hashrate执行之前，这个缺陷不能被披露。 因此，补丁包括一个隐蔽的信号机制，以便团队可以监视其部署。 代码将两个标记字节(0xf0ba)插入到每个coinbase事务中的第二个证人项(通常填充8个随机字节的字段)中。 当部署达到90%时，团队认为公开披露补丁足够安全。
+  </p>
+</div></div></section>
+
+<section class="notice default"><div class="section-wrapper"><div>
+  <h2>新的协议内容</h2>
+  <p>
+    HNS重新索赔通货膨胀漏洞:完全披露 新协议规则 声明必须提交到主网块散列。默认情况下，所有的请求都提交到块#1。现有的规则已经要求，随后的收回必须保证更高的区块高度。这使得在软件中，当索赔被重新提交时很容易确定(commitHeight > 1)。以下新规则由软分叉代码强制执行 最初的声明必须提交到区块1。 初始索赔必须支付低于1,000 HNS的费用。 重新申索必须支付与首次申索完全相同的费用。 矿商不能收取任何重新申请的费用:这些费用被“烧掉”（销毁）了，或者更准确地说，它已经存在于以前的区块中。 直到自上次索赔或重新索赔以来已经过288个区块后，才能挖掘重新索赔。
+  </p>
+
+<section class="notice default"><div class="section-wrapper"><div>
+  <h2>Thanks</h2>
+  <p>
+    This document was translated into Chinese by <code>ludoviso/</code> and <code>ids/</code> from the hnsfans.com community.
+  </p>
+
+</div></div></section>
+
+
+<footer id='footer'>
+<!-- the onboarding pages and dashboard use the small footer -->
+  
+    <div class='footer-wrap'>
+  <nav>
+    <div class='header'>
+      <h3>Handshake</h3>
+      <span><img class='footer-caret-down' src='/img/footer/down-caret.svg' alt='Toggle expanded menu on mobile'/></span>
+      <span><img class='footer-caret-up hide' src='/img/footer/up-caret.svg' alt='Toggle expanded menu on mobile'/></span>
+    </div>
+    <div class='links'>
+      <a href='/'>Home</a>
+      <a href='/community'>Community</a>
+    </div>
+  </nav>
+
+  <nav>
+    <div class='header'>
+      <h3>Learn</h3>
+      <span><img class='footer-caret-down' src='/img/footer/down-caret.svg' alt='Toggle expanded menu on mobile'/></span>
+      <span><img class='footer-caret-up hide' src='/img/footer/up-caret.svg' alt='Toggle expanded menu on mobile'/></span>
+    </div>
+    <div class='links'>
+      <a href='/faq'>FAQ</a>
+      <a href='/files/handshake.txt'>Design Notes</a>
+    </div>
+  </nav>
+
+  <nav>
+    <div class='header'>
+      <h3>Develop</h3>
+      <span><img class='footer-caret-down' src='/img/footer/down-caret.svg' alt='Toggle expanded menu on mobile'/></span>
+      <span><img class='footer-caret-up hide' src='/img/footer/up-caret.svg' alt='Toggle expanded menu on mobile'/></span>
+    </div>
+    <div class='links'>
+      <a href='https://handshake-org.github.io'>Documentation</a>
+      <a href='https://github.com/handshake-org/hsd'>Run a full node</a>
+      <a href='https://github.com/handshake-org/hnsd'>Install an SPV resolver</a>
+      <a href='https://handshake-org.github.io/guides/auctions.html'>Auction system guide</a>
+    </div>
+  </nav>
+
+  <!-- Keeps things in line -->
+  <nav style="display:none;">
+  </nav>
+</div><!-- close center-wrap -->
+
+
+
+  
+    <div class='footer-wrap bottom-wrap'>
+      <a href='/'>
+        Home
+      </a>
+      <a href='/terms-of-use'>
+        Terms of Use
+      </a>
+      <a href='/privacy-policy'>
+          Privacy Policy
+      </a>
+      <a href='/trademark-disclaimer'>
+          Trademark Disclaimer
+      </a>
+
+      <nav class='social-icons-small-footer'>
+        <a href='https://github.com/handshake-org/'>
+          <img src='/img/footer/github.svg' alt='GitHub logo'/>
+        </a>
+        <a href='https://twitter.com/hns'>
+          <img src='/img/footer/twitter.svg' alt='Twitter logo'/>
+        </a>
+        <a href='https://reddit.com/r/handshake'>
+          <img src='/img/footer/reddit.svg' alt='Reddit logo'/>
+        </a>
+      </nav>
+    </div>
+  
+
+</footer>
+
+<script src='/js/footer.js'></script>
+<script src='/js/nav.js'></script>
+<script>
+  window.addEventListener("load", function(e) {
+    document.documentElement.className = '';
+  });
+</script>
+
+</body>
+</html>
