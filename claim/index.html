@@ -127,8 +127,9 @@
   <h2>Bidding on names</h2>
   <p>It takes about a day before you can do anything. This is a decentralized network without singular leaders or institutions in permanent control, so it will need time to confirm.</p>
   <p>After about a day for the redemption to clear on the network, you can use your HNS to register top-level domains (which could also be useful for usernames on systems which use Handshake). Replace NAME with your desired name. Please see the documentation on <a href="https://hsd-dev.org/guides/auctions.html">auctions</a> and <a href="https://hsd-dev.org/guides/protocol.html">protocol summary</a> for more information.</p>
-  <p>Name status (week in which it will be released if not yet available): <b>./bin/hsd-cli rpc getnameinfo NAME</b></p>
-  <p>Open for bidding (if name is not being opened): <b>./bin/hsw-cli rpc sendopen NAME</b></p>
+  <p>Name status (check a name is available): <b>./bin/hsd-cli rpc getnameinfo NAME</b></p>
+  <p>Open for bidding: <b>./bin/hsw-cli rpc sendopen NAME</b></p>
+  <p>After sending an open transaction, it will take around 6 hours for bidding to open. You will have around 5 days to submit a bid before bidding closes.</p>
   <p>Send bid (150 is an example bid amount and 500 is your blinding mask, see documentation): <b>./bin/hsw-cli rpc sendbid NAME 150 500</b></p>
   <p>You should set a very high blinding mask as it can dissuade people from outbidding you, the blinding mask is public, you will reveal your actual bid after bidding closes. Choose whatever bid and blinding mask you think makes sense for you. Note that the bid is a "Second-Price Auction", meaning setting a higher value will not result in higher payment unless there is someone else willing to pay that amount.</p>
   <p>Reveal bid (YOU MUST REVEAL AFTER BIDDING IS CLOSED WITHIN 10-BLOCK-DAYS OR YOU WILL LOSE YOUR COINS, SEE DOCUMENTATION): <b>./bin/hsw-cli rpc sendreveal NAME</b></p>
