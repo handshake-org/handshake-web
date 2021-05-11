@@ -128,13 +128,13 @@
   <p>It takes about a day before you can do anything. This is a decentralized network without singular leaders or institutions in permanent control, so it will need time to confirm.</p>
   <p>After about a day for the redemption to clear on the network, you can use your HNS to register top-level domains (which could also be useful for usernames on systems which use Handshake). Replace NAME with your desired name. Please see the documentation on <a href="https://hsd-dev.org/guides/auctions.html">auctions</a> and <a href="https://hsd-dev.org/guides/protocol.html">protocol summary</a> for more information.</p>
   <p>Name status (check a name is available): <b>./bin/hsd-cli rpc getnameinfo NAME</b></p>
+  <p>If it says "info": null, then the name is available</p>
   <p>Open for bidding: <b>./bin/hsw-cli rpc sendopen NAME</b></p>
   <p>After sending an open transaction, it will take around 6 hours for bidding to open. You will have around 5 days to submit a bid before bidding closes.</p>
   <p>Send bid (150 is an example bid amount and 500 is your blinding mask, see documentation): <b>./bin/hsw-cli rpc sendbid NAME 150 500</b></p>
   <p>You should set a very high blinding mask as it can dissuade people from outbidding you, the blinding mask is public, you will reveal your actual bid after bidding closes. Choose whatever bid and blinding mask you think makes sense for you. Note that the bid is a "Second-Price Auction", meaning setting a higher value will not result in higher payment unless there is someone else willing to pay that amount.</p>
   <p>Reveal bid (YOU MUST REVEAL AFTER BIDDING IS CLOSED WITHIN 10-BLOCK-DAYS OR YOU WILL LOSE THE COINS YOU ALLOCATED TO BID FROM THE sendbid TRANSACTION, SEE DOCUMENTATION): <b>./bin/hsw-cli rpc sendreveal NAME</b></p>
   <p>If lost auction, refund coins back to yourself: <b>./bin/hsw-cli rpc sendredeem</b></p>
-  <p>Get a list of all names and the current state: <b>./bin/hsd-cli rpc getnames</b></p>
   <p>See the documentation on more commands, such as renewals which must be made at least every two years.</p>
   <p>Try googling/searching for <b>hns block explorer</b> or looking on an HNS Exchange for a list of bid blinds and bid status of names.</p>
   <p>The state of auctions are as follows: OPEN (first ~six hours, cannot bid), BID (~five days, anyone can place bids), REVEAL (~ten days, you MUST reveal your bid or you lose your bid HNS), REDEEM/REGISTER (refund your money or update the DNS record, no time limit for REDEEM). This takes a long time to secure the network, while it is possible to make it fast, true decentralized systems must "confirm" chain states over time and therefore HNS biases towards security and correctness. Selecting instant redemption would be a foolish endeavor (as someone can claim high-value names cheaply) and fast auctions would prove inaccurate or increased vulnerability towards censorship attacks.</p>
