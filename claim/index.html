@@ -97,15 +97,15 @@
   <p>This page explains how <b>github developers with over 15 followers on February 2019</b>, or in the <b>PGP WoT Strong Set</b> can claim HNS. Being able to claim does NOT imply that one is a "top open source developer", this system was optimized for a list of previously scrapeable keys (and could not be modified after the Handshake network launches without a hard fork).</p>
   <h2>System Setup</h2>
   <p>Please read through these instructions carefully, as using cryptographic blockchains are a bit unusual.</p>
-  <p>Make sure you have nodejs and npm installed first. On MacOS, please install <a href="https://brew.sh">homebrew</a> and run "<b>brew install node</b>". On debian/ubuntu, you can run "<b>sudo apt-get install nodejs npm build-essential</b>". If you run other distributions or OSes, you can probably figure this part out.</p>
+  <p>Make sure you have nodejs and npm installed first. On MacOS, please install <a href="https://brew.sh">homebrew</a> and run "<b>brew install node unbound</b>". On debian/ubuntu, you can run "<b>sudo apt-get install nodejs npm build-essential libunbound-dev</b>". If you run other distributions or OSes, you can probably figure this part out.</p>
   <p>Next, install node-gyp: <b>npm install node-gyp</b></p>
   <h2>Download</h2>
   <p>Download <b>hsd</b>, <b>hs-client</b>, and <b>hs-airdrop</b> from <a href="https://handshake.org/download/">https://handshake.org/download/</a>. If downloaded from github, the directory structure is slightly different (hsd-2.4.0/hsd should be replaced with just hsd in these instructions).</p>
   <p>Extract hsd, hs-client, and hs-airdrop: <b>tar xvf hs*</b></p>
   <p>You may also verify the asc file if desired.</p>
   <h2>Install</h2>
-  <p>In one window, change into the hsd directory and install <b>cd hsd-2.4.0/hsd</b> and then run <b>npm install --production</b></p>.
-  <p>In the second window, change into the hs-client directory and install <b>cd hs-client-0.0.9/hs-client</b> and then run <b>npm install --production</b></p>
+  <p>In one window, change into the hsd directory <b>cd hsd-*/hsd</b> and then run <b>npm install --production</b></p>.
+  <p>In a second window, change into the hs-client directory <b>cd hs-client-*/hs-client</b> and then run <b>npm install --production</b></p>
   <h2>Run hsd</h2>
   <p>hsd is the handshake fullnode and will sync with the network</p>
   <p>To connect, in the first window run: <b>./bin/hsd --log-level info</b></p>
@@ -115,12 +115,12 @@
   <p>You should see a string of random looking characters beginning with <b>hs1</b>. The entire string inside the quotes is your public address (this address is public and can be shared). <b>Copy this address and save it</b></p>
   <h2>Claim your HNS</h2>
   <p>In the second window, go to the hs-airdrop directory and install hs-airdrop:</p>
-  <p><b>cd hs-airdrop-0.10.0/hs-airdrop</b></p>
+  <p><b>cd hs-airdrop-*/hs-airdrop</b></p>
   <p>Then install the dependencies: <b>npm install --production</b></p>
-  <p>Check if your key is in the airdrop. Replace id_rsa with the location of your key you want to check and the hs1XXXX string with the public address you generated earlier. Please see the hs-airdrop README.md file for more information.</p>
+  <p>Check if your key is in the airdrop. Replace id_rsa with the location of your private key you want to check and the hs1XXXX string with the public address you generated earlier. This will prompt for your key's passphrase if encrypted. Please see the hs-airdrop README.md file for more information.</p>
   <p><b>./bin/hs-airdrop --bare ~/.ssh/id_rsa hs1XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</b></p>
   <p>This may take a while, as it is trying to find and decrypt a message to your key. If successful you should see a base64 string. A NonceError means your key was not included, you can try another key.</p>
-  <p>If you have a base64 string, you can broadcast it to the network by going back to hs-client (<b>cd hs-client-0.0.9/hs-client</b>) and typing (replace BASE64_STRING with the string dumped from hs-airdrop): <b>./bin/hsd-cli rpc sendrawairdrop BASE64_STRING</b></p>
+  <p>If you have a base64 string, you can broadcast it to the network by going back to hs-client (<b>cd hs-client-*/hs-client</b>) and typing (replace BASE64_STRING with the string dumped from hs-airdrop): <b>./bin/hsd-cli rpc sendrawairdrop BASE64_STRING</b></p>
   <p>You should see it return a hex hash if successful. In an hour or two you should see it propogate over the network. You can see the updated balance by running: <b>./bin/hsw-cli balance</b></p>
   <p>You can also try searching for your hs1 address balance by googling/searching: <b>hns block explorer</b> in your web browser and pasting in your hs1 address.</p>
   <p><b>You did it! Please read on! Handshake provides tooling on secure naming and by owning the HNS tokens you can use it to bid on names. You can try bidding on some names before playing around with transfers. Handshake deals with scarce resources, namespaces are unique, consider registering a username/handle you like. Many good names are being registered, apologies if your preferred names are taken -- it's hard to mitigate this in a decentralized way. On the principle of understanding the protocol, it could be interesting for software engineers to go through the process of registering a name for themselves.</b></p>
