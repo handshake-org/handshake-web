@@ -1,6 +1,6 @@
 The notes below describe the approach in designing and writing the initial
 reference implementation of Handshake. This is not a prescriptive document and
-should not be used as such. This document's goal is to provide a referenece on
+should not be used as such. This document's goal is to provide a reference on
 the rationale and initial design of the protocol.
 
 # Abstract
