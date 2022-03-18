@@ -101,7 +101,7 @@
   <p>Next, install node-gyp: <b>npm install node-gyp</b></p>
   <h2>Download</h2>
   <p>Download <b>hsd</b>, <b>hs-client</b>, and <b>hs-airdrop</b> from <a href="https://handshake.org/download/">https://handshake.org/download/</a>. If downloaded from github, the directory structure is slightly different (hsd-2.4.0/hsd should be replaced with just hsd in these instructions).</p>
-  <p>Extract hsd, hs-client, and hs-airdrop: <b>tar xvf hs*</b></p>
+  <p>Extract hsd, hs-client, and hs-airdrop: <b>ls hs*.gz |xargs -n1 tar -xzf</b></p>
   <p>You may also verify the asc file if desired.</p>
   <h2>Install</h2>
   <p>In one window, change into the hsd directory <b>cd hsd-*/hsd</b> and then run <b>npm install --production</b></p>.
