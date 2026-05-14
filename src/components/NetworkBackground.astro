@@ -1,0 +1,177 @@
+---
+---
+<div id="network-container" class="absolute inset-0 w-full h-full -z-10 overflow-hidden bg-slate-50/50">
+  <canvas id="network-canvas" class="w-full h-full"></canvas>
+</div>
+
+<script>
+  import * as THREE from 'three';
+
+  const init = () => {
+    const container = document.getElementById('network-container');
+    const canvas = document.getElementById('network-canvas') as HTMLCanvasElement;
+    if (!container || !canvas) return;
+
+    // Scene setup
+    const scene = new THREE.Scene();
+    
+    // Camera setup
+    const camera = new THREE.PerspectiveCamera(60, container.clientWidth / container.clientHeight, 0.1, 1000);
+    camera.position.z = 40;
+
+    // Renderer setup
+    const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+    renderer.setSize(container.clientWidth, container.clientHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+    // Group to hold our network
+    const networkGroup = new THREE.Group();
+    scene.add(networkGroup);
+
+    // Create Nodes (Blocks)
+    const particleCount = 120;
+    const geometry = new THREE.BoxGeometry(0.8, 0.8, 0.8);
+    const material = new THREE.MeshBasicMaterial({
+      color: 0x1e293b, // slate-800
+      transparent: true,
+      opacity: 0.8,
+    });
+
+    const nodes: THREE.Mesh[] = [];
+    for (let i = 0; i < particleCount; i++) {
+      const mesh = new THREE.Mesh(geometry, material);
+      
+      // Random positions in a volume
+      mesh.position.x = (Math.random() - 0.5) * 100;
+      mesh.position.y = (Math.random() - 0.5) * 60;
+      mesh.position.z = (Math.random() - 0.5) * 30;
+      
+      // Random initial rotation
+      mesh.rotation.x = Math.random() * Math.PI;
+      mesh.rotation.y = Math.random() * Math.PI;
+
+      // Store custom data for physics
+      mesh.userData = {
+        basePosition: mesh.position.clone(),
+        velocity: new THREE.Vector3(),
+        randomOffset: Math.random() * 100
+      };
+
+      networkGroup.add(mesh);
+      nodes.push(mesh);
+    }
+
+    // Create Edges (Lines)
+    const lineMaterial = new THREE.LineBasicMaterial({
+      color: 0x94a3b8, // slate-400
+      transparent: true,
+      opacity: 0.25
+    });
+    const lineGeometry = new THREE.BufferGeometry();
+    const linesMesh = new THREE.LineSegments(lineGeometry, lineMaterial);
+    networkGroup.add(linesMesh);
+
+    // Mouse Interaction
+    const mouse = new THREE.Vector2(-9999, -9999);
+    const raycaster = new THREE.Raycaster();
+    const plane = new THREE.Plane(new THREE.Vector3(0, 0, 1), 0);
+    const mousePoint = new THREE.Vector3(-9999, -9999, 0);
+
+    const onMouseMove = (event: MouseEvent) => {
+      const rect = container.getBoundingClientRect();
+      // Normalize mouse coordinates (-1 to +1)
+      mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+      mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+
+      // Project mouse to 3D plane at z=0
+      raycaster.setFromCamera(mouse, camera);
+      raycaster.ray.intersectPlane(plane, mousePoint);
+    };
+
+    window.addEventListener('mousemove', onMouseMove);
+
+    // Resize Handler
+    const onWindowResize = () => {
+      if (!container) return;
+      camera.aspect = container.clientWidth / container.clientHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(container.clientWidth, container.clientHeight);
+    };
+    window.addEventListener('resize', onWindowResize);
+
+    // Animation Loop
+    const clock = new THREE.Clock();
+
+    const animate = () => {
+      requestAnimationFrame(animate);
+      
+      const time = clock.getElapsedTime();
+
+      // Slowly rotate the entire network to feel alive
+      networkGroup.rotation.y = Math.sin(time * 0.05) * 0.1;
+      networkGroup.rotation.x = Math.cos(time * 0.05) * 0.05;
+
+      const positions: THREE.Vector3[] = [];
+
+      // Update Node positions (Repulsion & Spring)
+      for (let i = 0; i < nodes.length; i++) {
+        const node = nodes[i];
+
+        // 1. Mouse Repulsion Force
+        const distToMouse = node.position.distanceTo(mousePoint);
+        const repelRadius = 15;
+
+        if (distToMouse < repelRadius) {
+          const force = (repelRadius - distToMouse) / repelRadius;
+          const dir = node.position.clone().sub(mousePoint).normalize();
+          // Push away and slightly rotate
+          node.userData.velocity.add(dir.multiplyScalar(force * 0.4));
+          node.rotation.x += 0.05 * force;
+          node.rotation.y += 0.05 * force;
+        }
+
+        // 2. Spring back to base position
+        const springForce = node.userData.basePosition.clone().sub(node.position).multiplyScalar(0.02);
+        node.userData.velocity.add(springForce);
+
+        // 3. Damping (Friction)
+        node.userData.velocity.multiplyScalar(0.9);
+        
+        // Apply velocity
+        node.position.add(node.userData.velocity);
+
+        // 4. Idle floating animation
+        node.position.y += Math.sin(time * 2 + node.userData.randomOffset) * 0.01;
+        node.rotation.x += 0.002;
+        node.rotation.y += 0.003;
+
+        positions.push(node.position);
+      }
+
+      // Update Lines connecting close nodes
+      const linePositions: number[] = [];
+      const connectDistance = 12;
+
+      for (let i = 0; i < positions.length; i++) {
+        for (let j = i + 1; j < positions.length; j++) {
+          const dist = positions[i].distanceTo(positions[j]);
+          if (dist < connectDistance) {
+            linePositions.push(
+              positions[i].x, positions[i].y, positions[i].z,
+              positions[j].x, positions[j].y, positions[j].z
+            );
+          }
+        }
+      }
+
+      lineGeometry.setAttribute('position', new THREE.Float32BufferAttribute(linePositions, 3));
+
+      renderer.render(scene, camera);
+    };
+
+    animate();
+  };
+
+  // Run on client load
+  document.addEventListener('DOMContentLoaded', init);
+</script>

@@ -1,0 +1,20 @@
+<svg width="26px" height="22px" viewBox="0 0 26 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M8.36,21.16 C5.47,21.16 2.77,20.31 0.51,18.87 C0.91,18.92 1.32,18.94 1.73,18.94 C4.13,18.94 6.34,18.12 8.1,16.74 C5.86,16.7 3.96,15.22 3.31,13.18 C3.62,13.24 3.94,13.27 4.27,13.27 C4.74,13.27 5.19,13.21 5.62,13.09 C3.28,12.62 1.51,10.54 1.51,8.06 C1.51,8.03 1.51,8.01 1.51,7.99 C2.2,8.37 2.99,8.6 3.83,8.63 C2.46,7.71 1.55,6.14 1.55,4.36 C1.55,3.42 1.8,2.54 2.24,1.78 C4.77,4.88 8.55,6.93 12.81,7.14 C12.73,6.76 12.68,6.37 12.68,5.97 C12.68,3.14 14.98,0.84 17.81,0.84 C19.28,0.84 20.61,1.46 21.55,2.46 C22.72,2.23 23.82,1.81 24.81,1.22 C24.42,2.42 23.61,3.43 22.55,4.06 C23.59,3.93 24.58,3.66 25.5,3.25 C24.81,4.28 23.94,5.19 22.94,5.91 C22.95,6.13 22.95,6.35 22.95,6.57 C22.95,13.34 17.79,21.16 8.36,21.16 Z" id="path-1"></path>
+    </defs>
+    <g id="final" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="mobile-footer" transform="translate(-175.000000, -387.000000)">
+            <g id="Group-2" transform="translate(127.000000, 386.000000)">
+                <g id="Group-244" transform="translate(48.000000, 1.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="Clip-243"></g>
+                    <polygon id="Fill-242" fill="#FFFFFF" mask="url(#mask-2)" points="-4.49 26.16 30.5 26.16 30.5 -4.16 -4.49 -4.16"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

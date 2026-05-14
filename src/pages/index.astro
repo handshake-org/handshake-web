@@ -1,0 +1,146 @@
+---
+import Layout from '../layouts/Layout.astro';
+import NetworkBackground from '../components/NetworkBackground.astro';
+---
+
+<Layout title="Handshake | Decentralized Naming & Certificate Authority">
+  <!-- Hero Section -->
+  <section class="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
+    <NetworkBackground />
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-24 lg:pt-32 lg:pb-36 pointer-events-none">
+      <div class="text-center max-w-4xl mx-auto pointer-events-auto bg-white/70 backdrop-blur-sm p-8 sm:p-12 rounded-3xl border border-white/50 shadow-sm">
+        <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 tracking-tight mb-6">
+          Decentralized naming and <span class="text-slate-500">certificate authority</span>
+        </h1>
+        <p class="text-xl text-slate-700 mb-10 max-w-2xl mx-auto leading-relaxed">
+          An experimental peer-to-peer root naming system serving as an alternative to existing Certificate Authorities and naming systems.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a href="https://github.com/handshake-org/hsd" class="px-8 py-3 bg-slate-900 text-white font-medium rounded-lg hover:bg-black transition-colors shadow-sm">
+            View Source Code
+          </a>
+          <a href="https://handshake-org.github.io" class="px-8 py-3 bg-white text-slate-800 border border-slate-300 font-medium rounded-lg hover:bg-slate-50 transition-colors shadow-sm">
+            Read Documentation
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="py-20 bg-slate-50 border-y border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <h2 class="text-3xl font-bold text-slate-900 mb-6">About Handshake</h2>
+          <div class="prose prose-slate prose-lg text-slate-600">
+            <p>
+              Handshake is a decentralized, permissionless naming protocol where every peer is validating and in charge of managing the root DNS naming zone.
+            </p>
+            <p>
+              Names on the internet ultimately rely upon centralized actors with full control over a system. Handshake aims to experiment with new ways the internet can be more secure, resilient, and socially useful with a peer-to-peer system validated by the network's participants.
+            </p>
+            <p>
+              Services on the internet have become more centralized since the 1990s, diverging from the original decentralized vision. <strong>Email became Gmail, usenet became reddit, blog replies became Facebook, and pingbacks became Twitter.</strong> Internet services and platforms can benefit from building on top of a decentralized system designed specifically for resilience against sybil attacks.
+            </p>
+          </div>
+        </div>
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center">
+          <img src="/images/landing/blocks.svg" alt="Web of Network Nodes" class="w-full max-w-md opacity-90" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features/Protocol Section -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 max-w-3xl mx-auto">
+        <h2 class="text-3xl font-bold text-slate-900 mb-4">The Handshake Protocol</h2>
+        <p class="text-lg text-slate-600">
+          By running Handshake, one can participate in a decentralized open naming platform secured by a peer-to-peer network.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="p-6 bg-slate-50 rounded-xl border border-slate-100">
+          <h3 class="text-xl font-semibold text-slate-900 mb-3">Base Layer for the Internet</h3>
+          <p class="text-slate-600">The internet is arranged in layers. Secure naming ensures user agents are talking to the right endpoints, starting at the lowest layers.</p>
+        </div>
+        <div class="p-6 bg-slate-50 rounded-xl border border-slate-100">
+          <h3 class="text-xl font-semibold text-slate-900 mb-3">True Decentralization</h3>
+          <p class="text-slate-600">No official singular Foundation, Committee, Corporation, or entities in permanent unitary control of the protocol.</p>
+        </div>
+        <div class="p-6 bg-slate-50 rounded-xl border border-slate-100">
+          <h3 class="text-xl font-semibold text-slate-900 mb-3">Alternative to CAs</h3>
+          <p class="text-slate-600">Uses a decentralized trust anchor to prove domain ownership, moving away from centralized certificate authorities.</p>
+        </div>
+        <div class="p-6 bg-slate-50 rounded-xl border border-slate-100">
+          <h3 class="text-xl font-semibold text-slate-900 mb-3">Minimal Global Consensus</h3>
+          <p class="text-slate-600">Names and signing certificates may be one of the few places of global agreement for a decentralized web.</p>
+        </div>
+        <div class="p-6 bg-slate-50 rounded-xl border border-slate-100">
+          <h3 class="text-xl font-semibold text-slate-900 mb-3">Light Clients</h3>
+          <p class="text-slate-600">Merkelized proofs and proof-of-work allow for lightweight name resolutions and cryptographic name proofs.</p>
+        </div>
+        <div class="p-6 bg-slate-50 rounded-xl border border-slate-100">
+          <h3 class="text-xl font-semibold text-slate-900 mb-3">Sybil Resilience</h3>
+          <p class="text-slate-600">Economic incentives enable decentralized agreements to form via a transparent name auction process, preventing a single party from claiming all names.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Connect & Resources -->
+  <section class="py-20 bg-slate-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div>
+          <h2 class="text-2xl font-bold mb-6">Developer Resources</h2>
+          <ul class="space-y-4">
+            <li>
+              <a href="/download" class="flex items-center text-slate-300 hover:text-white transition-colors">
+                <span class="mr-3">↳</span> Initial Code Download
+              </a>
+            </li>
+            <li>
+              <a href="https://bobwallet.io/" class="flex items-center text-slate-300 hover:text-white transition-colors">
+                <span class="mr-3">↳</span> Bob Wallet (GUI Full Node)
+              </a>
+            </li>
+            <li>
+              <a href="files/handshake.txt" class="flex items-center text-slate-300 hover:text-white transition-colors">
+                <span class="mr-3">↳</span> Protocol Design Notes
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold mb-6">Connect with the Community</h2>
+          <ul class="space-y-4">
+            <li>
+              <a href="https://t.me/handshake_hns" class="flex items-center text-slate-300 hover:text-white transition-colors">
+                <span class="mr-3">↳</span> Telegram: @handshake_hns
+              </a>
+            </li>
+            <li>
+              <a href="/discord" class="flex items-center text-slate-300 hover:text-white transition-colors">
+                <span class="mr-3">↳</span> Discord
+              </a>
+            </li>
+            <li>
+              <a href="https://web.libera.chat#handshake" class="flex items-center text-slate-300 hover:text-white transition-colors">
+                <span class="mr-3">↳</span> IRC: #handshake on Libera Chat
+              </a>
+            </li>
+            <li>
+              <a href="https://matrix.to/#/#handshake:libera.chat" class="flex items-center text-slate-300 hover:text-white transition-colors">
+                <span class="mr-3">↳</span> Matrix: #handshake:libera.chat
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
