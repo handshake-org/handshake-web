@@ -1,14 +1,53 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import '../styles/legacy-content.css';
 ---
-<Layout title="Handshake | download">
+<Layout title="Handshake | Download">
   <section class="py-20 bg-white">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h1 class="text-4xl font-bold text-slate-900 mb-8 capitalize">download</h1>
-      <div class="prose prose-slate prose-lg">
-        <p>This page has been migrated to the new modern Astro architecture.</p>
-        <p>Original content from legacy/download/index.html is being preserved and adapted.</p>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 prose prose-slate prose-lg legacy-content">
+      <section id="faucet" class="default">
+    <div class="section-wrapper">
+      <div class="hero-no-split">
+        <h1 class="low-margin">Download</h1>
       </div>
+     </div>
+  </section>
+
+  <section class="light"><div class="section-wrapper"><div>
+    <div>
+      <p><a href="https://handshake.org/files/hsd-8.0.0.tar.gz">hsd-8.0.0.tar.gz</a> (<a href="https://handshake.org/files/hsd-8.0.0.tar.gz.asc">asc</a>)</p>
+      <p><a href="https://handshake.org/files/hs-client-8.0.0.tar.gz">hs-client-8.0.0.tar.gz</a> (<a href="https://handshake.org/files/hs-client-8.0.0.tar.gz.asc">asc</a>)</p>
+      <p>
+        node-gyp is required to build: Execute <code>hsd-8.0.0/build</code><br>
+        Node.js version 14+ is required to run: Execute <code>hsd-8.0.0/hsd/bin/hsd</code><br>
+        For upgrade information visit the <a href="https://github.com/handshake-org/hsd/blob/v8.0.0/docs/release-notes/release-notes-7.x.md">Release Notes</a>.
+      </p>
+    </div>
+  </div></div></section>
+
+  <section class="default"><div class="section-wrapper"><div>
+    <div>
+      <p><a href="https://handshake.org/files/hs-airdrop-0.10.0.tar.gz">hs-airdrop-0.10.0.tar.gz</a> (<a href="https://handshake.org/files/hs-airdrop-0.10.0.tar.gz.asc">asc</a>)</p>
+      <p><a href="https://handshake.org/files/hs-miner-0.0.10.tar.gz">hs-miner-0.0.10.tar.gz</a> (<a href="https://handshake.org/files/hs-miner-0.0.10.tar.gz.asc">asc</a>)</p>
+    </div>
+  </div></div></section>
+
+  <section class="light"><div class="section-wrapper"><div>
+    <div>
+      <p>
+        Check tarball signers list in <a href="https://github.com/handshake-org/hsd/blob/master/SECURITY.md#reporting-a-vulnerability">SECURITY</a>.
+      </p>
+    </div>
+  </div></div></section>
+  <section class="default"><div class="section-wrapper"><div>
+    <div>
+      <p><b>SHA256 checksums:</b></p>
+b2dd2438f8552c880a4659cacb41ce59108d07bce08c291c6a690abe4f7bdfdc  hs-airdrop-0.10.0.tar.gz<br>
+67ff3517f24194b4e1375c565634d07e263ddcbee1c744e82592b6cb8e31f780  hs-miner-0.0.10.tar.gz<br>
+359350189282f3837c545712cff32ea143d6c55529f80f971bdee4f3ffacded3  hs-client-8.0.0.tar.gz<br>
+5280829508c38d96f2eeddcdb0d0fecf07990161d7d6f5495dae7ccb84c21818  hsd-8.0.0.tar.gz
+    </div>
+  </div></div></section>
     </div>
   </section>
 </Layout>
