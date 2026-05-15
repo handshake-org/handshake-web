@@ -1,0 +1,68 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pages = [
+  { title: 'Home', path: '/' },
+  { title: 'Community', path: '/community' },
+  { title: 'Grant Sponsors', path: '/grant-sponsors' },
+  { title: 'FAQ', path: '/faq' },
+  { title: 'Claim', path: '/claim' },
+  { title: 'Download', path: '/download' },
+  { title: 'How It Works', path: '/how-it-works' },
+  { title: 'Notice', path: '/notice' },
+  { title: 'Privacy Policy', path: '/privacy-policy' },
+  { title: 'Terms of Use', path: '/terms-of-use' },
+  { title: 'Trademark Disclaimer', path: '/trademark-disclaimer' },
+];
+---
+
+<Layout title="Handshake | Sitemap">
+  <section class="py-20 bg-white min-h-[70vh]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-4xl font-bold text-slate-900 mb-8">Sitemap</h1>
+      
+      <div class="prose prose-slate prose-lg">
+        <p>A complete list of pages available on the Handshake website.</p>
+        
+        <ul class="mt-8 space-y-2 list-disc list-inside">
+          {pages.map((page) => (
+            <li>
+              <a href={page.path} class="text-slate-600 hover:text-black font-medium underline">
+                {page.title}
+              </a>
+            </li>
+          ))}
+        </ul>
+
+        <h3 class="mt-12 text-2xl font-semibold text-slate-900">Resources & Documentation</h3>
+        <ul class="mt-4 space-y-2 list-disc list-inside">
+          <li>
+            <a href="https://handshake-org.github.io" class="text-slate-600 hover:text-black font-medium underline" target="_blank" rel="noopener noreferrer">
+              Official Documentation
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/handshake-org/hsd" class="text-slate-600 hover:text-black font-medium underline" target="_blank" rel="noopener noreferrer">
+              GitHub (Full Node)
+            </a>
+          </li>
+          <li>
+            <a href="/skill.md" class="text-slate-600 hover:text-black font-medium underline">
+              AI Agent Skill Info (skill.md)
+            </a>
+          </li>
+          <li>
+            <a href="/llms.txt" class="text-slate-600 hover:text-black font-medium underline">
+              LLMs Context (llms.txt)
+            </a>
+          </li>
+          <li>
+            <a href="/sitemap-index.xml" class="text-slate-600 hover:text-black font-medium underline">
+              XML Sitemap
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</Layout>
