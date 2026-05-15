@@ -1,7 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
 ---
-<Layout title="Handshake | Claim">
+<Layout 
+  title="Handshake | Claim HNS"
+  description="Information regarding the Handshake FOSS developer airdrop claims."
+>
   <section class="py-20 bg-white">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <h1 class="text-4xl font-bold text-slate-900 mb-8 capitalize">Claim</h1>
@@ -27,10 +30,72 @@ import Layout from '../layouts/Layout.astro';
         </div>
       </div>
 
-      <div class="prose prose-slate prose-lg opacity-50">
+      <div class="prose prose-slate prose-lg opacity-50 legacy-content">
         <h2>Legacy Claim Information</h2>
         <p>This page previously contained instructions for FOSS developers to claim their airdrop allocation. As the claim period is now over, these instructions are preserved for historical reference only.</p>
-        <p>Original content from legacy/claim/index.html is being preserved and adapted.</p>
+        
+        <p><a href="https://github.com/handshake-org/hs-airdrop">Detailed information available in the hs-airdrop README.md file.</a></p>
+        <p><b>UPDATE: Please be careful about using other software or giving away your private key to others. In addition, one should be careful about following instructions on random websites who are not HNS community members as those instructions may incorrectly state that this page is currently outdated or contain other errors; instructions made by those who are not active users or community participants in Handshake likely have not been validated by the Handshake community.</b></p>
+        <p><b>These instructions generates a signed proof of ownership of a public key. Please consider against sending your private keys to third parties to do this process on your behalf, as that results in significant risks. Handshake is an experiment in decentralized allocation of ownership of the network to the open source community, it is believed that open source developers should be one of the primary long-term beneficiaries by owning a necessary resource as the network utility increases. This HNS airdrop is a native limited resource used to register top-level domains and usernames (a limited resource is needed in decentralized naming systems, as a single bad actor would register all useful names in existence if no limited resources existed).</b></p>
+        <p>This page explains how <b>github developers with over 15 followers on February 2019</b>, or in the <b>PGP WoT Strong Set</b> can claim HNS. Being able to claim does NOT imply that one is a "top open source developer", this system was optimized for a list of previously scrapeable keys (and could not be modified after the Handshake network launches without a hard fork).</p>
+        
+        <h3>System Setup</h3>
+        <p>Please read through these instructions carefully, as using cryptographic blockchains are a bit unusual.</p>
+        <p>Make sure you have nodejs and npm installed first. On MacOS, please install <a href="https://brew.sh">homebrew</a> and run "<b>brew install node unbound</b>". On debian/ubuntu, you can run "<b>sudo apt-get install nodejs npm build-essential libunbound-dev</b>". If you run other distributions or OSes, you can probably figure this part out.</p>
+        <p>Next, install node-gyp: <b>npm install node-gyp</b></p>
+        
+        <h3>Download</h3>
+        <p>Download <b>hsd</b> and <b>hs-airdrop</b> from <a href="/download">https://handshake.org/download/</a>. If downloaded from github, the directory structure is slightly different (hsd-*/hsd should be replaced with just hsd in these instructions).</p>
+        <p>Extract hsd and hs-airdrop: <b>tar xvf hs*</b></p>
+        <p>You may also verify the asc file if desired.</p>
+        
+        <h3>Install</h3>
+        <p>In one window, change into the hsd directory <b>cd hsd-*/hsd</b> and then run <b>npm install --production</b>.</p>
+        <p>In a second window, change into the hs-airdrop directory <b>cd hs-airdrop-*/hs-airdrop</b> and then run <b>npm install --production</b></p>
+        
+        <h3>Run hsd</h3>
+        <p>hsd is the handshake fullnode and will sync with the network</p>
+        <p>To connect, in the first window run: <b>./bin/hsd --log-level info</b></p>
+        
+        <h3>Get your address</h3>
+        <p>To claim your airdrop, you need an HNS address to send the coins to. To generate one, in a third window, change into the hsd directory <b>cd hsd-*/hsd</b> and then run:</p>
+        <p><b>./bin/hsw-cli account get default | grep receiveAddress</b></p>
+        <p>You should see a string of random looking characters beginning with <b>hs1</b>. The entire string inside the quotes is your public address (this address is public and can be shared). <b>Copy this address and save it</b></p>
+        
+        <h3>Claim your HNS</h3>
+        <p>Check if your key is in the airdrop. Replace id_rsa with the location of your private key you want to check and the hs1XXXX string with the public address you generated earlier. This will prompt for your key's passphrase if encrypted. Please see the hs-airdrop README.md file for more information.</p>
+        <p>In the second window, in the hs-airdrop directory run:</p>
+        <p><b>./bin/hs-airdrop --bare ~/.ssh/id_rsa hs1XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</b></p>
+        <p>This may take a while, as it is trying to find and decrypt a message to your key. If successful you should see a base64 string. A NonceError means your key was not included, you can try another key.</p>
+        <p>If you have a base64 string, you can broadcast it to the network by going back to the third window and running (replace BASE64_STRING with the string dumped from hs-airdrop): <b>./bin/hsd-cli rpc sendrawairdrop BASE64_STRING</b></p>
+        <p>You should see it return a hex hash if successful. In an hour or two you should see it propagate over the network. You can see the updated balance by running: <b>./bin/hsw-cli balance</b></p>
+        <p>You can also try searching for your hs1 address balance by googling/searching: <b>hns block explorer</b> in your web browser and pasting in your hs1 address.</p>
+        
+        <h3>Bidding on names</h3>
+        <p>It takes about a day before you can do anything. This is a decentralized network without singular leaders or institutions in permanent control, so it will need time to confirm.</p>
+        <p>After about a day for the redemption to clear on the network, you can use your HNS to register top-level domains (which could also be useful for usernames on systems which use Handshake). Replace NAME with your desired name. Please see the documentation on <a href="https://hsd-dev.org/guides/auctions.html">auctions</a> and <a href="https://hsd-dev.org/protocol/summary.html">protocol summary</a> for more information.</p>
+        <p>Name status (check a name is available): <b>./bin/hsd-cli rpc getnameinfo NAME</b></p>
+        <p>If it says "info": null, then the name is available</p>
+        <p>Open for bidding: <b>./bin/hsw-cli rpc sendopen NAME</b></p>
+        <p>After sending an open transaction, it will take around 6 hours for bidding to open. You will have around 5 days to submit a bid before bidding closes.</p>
+        <p>Send bid (150 is an example bid amount and 500 is your blinding mask, see documentation): <b>./bin/hsw-cli rpc sendbid NAME 150 500</b></p>
+        <p>You should set a very high blinding mask as it can dissuade people from outbidding you, the blinding mask is public, you will reveal your actual bid after bidding closes. Choose whatever bid and blinding mask you think makes sense for you. Note that the bid is a "Second-Price Auction", meaning setting a higher value will not result in higher payment unless there is someone else willing to pay that amount.</p>
+        <p>Reveal bid (YOU MUST REVEAL AFTER BIDDING IS CLOSED WITHIN 10-BLOCK-DAYS OR YOU WILL LOSE THE COINS YOU ALLOCATED TO BID FROM THE sendbid TRANSACTION, SEE DOCUMENTATION): <b>./bin/hsw-cli rpc sendreveal NAME</b></p>
+        <p>If lost auction, refund coins back to yourself: <b>./bin/hsw-cli rpc sendredeem</b></p>
+        <p>See the documentation on more commands, such as renewals which must be made at least every two years.</p>
+        <p>Try googling/searching for <b>hns block explorer</b> or looking on an HNS Exchange for a list of bid blinds and bid status of names.</p>
+        <p>The state of auctions are as follows: OPEN (first ~six hours, cannot bid), BID (~five days, anyone can place bids), REVEAL (~ten days, you MUST reveal your bid or you lose your bid HNS), REDEEM/REGISTER (refund your money or update the DNS record, no time limit for REDEEM). This takes a long time to secure the network, while it is possible to make it fast, true decentralized systems must "confirm" chain states over time and therefore HNS biases towards security and correctness. Selecting instant redemption would be a foolish endeavor (as someone can claim high-value names cheaply) and fast auctions would prove inaccurate or increased vulnerability towards censorship attacks.</p>
+        
+        <h3>Backing Up</h3>
+        <p>If you want to store your coins in the event Handshake's utility and valuation increases in the future via greater development in the open, then you should back up your keys to maintain access to your coins and name for the future.</p>
+        <p>Write down the 12 or 24 words on a piece of paper. These words can recover your names and funds at any time. There is no other backup and no third party can restore it on your behalf without these words. You are interacting with a p2p network, and hence there is no recovery functionality built-in (as this would require updating all nodes on the p2p network):</p>
+        <p><b>./bin/hsw-cli master</b></p>
+        
+        <h3>Summary</h3>
+        <p>Handshake is rooted in the culture of open source and the majority ownership of initial coins are claimable by open source developers with available scrapeable keys. The original intent was that the free and open source community has inufficient recognition in the long-term benefit in systems. When systems become more popular, the FOSS community does not receive the benefits. <b>If Handshake becomes more popular with better tooling and applications, members of the FOSS community benefits</b>. It's believed that this aligned incentive creates benefit for all, with recognition via higher network valuation and utility in the future if this method works. Certain kinds of decentralized systems were not historically possible as some entities could overwhelm the network and claim all the resources (in this case, register all names). Handshake is an experiment in distributing majority ownership to the open source community of this network as a method to bootstrap a decentralized network with limited resources, to prevent griefers taking up all the resources. It is hoped that this system could be used as a method wherever decentralized key authentication of names is needed (e.g. decentralized web applications where an association between a name and a cryptographic key proving ownership of that name). <b>In other words, an association between keys and names create the potential for the decentralized web by allocating cryptographically provable resources to names.</b> This could be used to prove the owner of a name published a document, and distributed across a decentralized network. The more applications using this system to secure/prove documents in a decentralized way, the higher the useful aggregate economic/social value of registered names on Handshake (Metcalfe's Law).</p>
+        <p>The Handshake community is in active development of authenticated proof of names/resources, decentralized social coordination tooling, and developing for decentralized web efforts.</p>
+        <p><b>If you have questions or are looking to see how to contribute to improve the usability of the network, get in touch with the wider community. There is no official foundation or organization, on HNS you aren't connected to a central server in full control of the network, so there are many community groups. For starters, you can try one of the IRC or telegram channels.</b></p>
+        <p><b>IRC: #handshake@freenode</b></p>
       </div>
     </div>
   </section>
