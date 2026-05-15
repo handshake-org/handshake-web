@@ -8,7 +8,7 @@ Handshake is a decentralized naming and certificate authority. It provides an al
 - Documentation: https://handshake-org.github.io
 - GitHub (Full Node): https://github.com/handshake-org/hsd
 - SPV Resolver: https://github.com/handshake-org/hnsd
-- Community Wallet: https://bobwallet.io/
+- Community Wallet: https://bobwallet.org/
 
 ## Technical Details
 - It uses a UTXO-based blockchain with Proof-of-Work to manage root zone file changes.
