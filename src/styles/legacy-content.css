@@ -1,0 +1,45 @@
+/* Additional global overrides to ensure legacy HTML elements imported from the old Handshake site display correctly alongside Tailwind Typography plugin */
+
+.legacy-content h2 {
+    font-weight: 700;
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.legacy-content ul.name-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0.5rem;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.legacy-content ul.name-list li {
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.legacy-content ul.name-list li a {
+    color: #475569; /* slate-600 */
+    text-decoration: none;
+}
+
+.legacy-content ul.name-list li a:hover {
+    color: #000; /* black */
+    text-decoration: underline;
+}
+
+.legacy-content .name-container strong {
+    display: block;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+}
+
+.legacy-content a {
+    color: #1e293b; /* slate-800 */
+    text-decoration: underline;
+}
+
+.legacy-content a:hover {
+    color: #000;
+}

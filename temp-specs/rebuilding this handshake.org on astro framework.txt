@@ -1,0 +1,43 @@
+rebuilding this handshake.org on astro framework.txt
+
+this is the repo for the handshake.org website, i forked it and want to rebuild it in astro.build framework and then send a pull request - the dev said i can submit pull request. but where is it hosted ? is it on github pages i think - can you tell ? can we host an astro site on github pages ? https://github.com/handshake-org/handshake-web
+
+
+grok agent answer:
+Yes, it's hosted on GitHub Pages. The repo (handshake-org/handshake-web) is a static HTML/CSS/JS site, and the live site at https://handshake.org serves from the gh-pages branch (with a CNAME file pointing to handshake.org).
+Quick confirmation
+
+Repo default branch seems to be gh-pages (all the content lives there).
+GitHub Pages serves it directly for the organization/repo.
+Custom domain is configured via the CNAME file in the repo.
+
+Can you host an Astro site on GitHub Pages?
+Yes, absolutely. Astro has excellent official support for GitHub Pages.
+Astro's static output works perfectly with GitHub Pages. They even provide:
+
+An official GitHub Action (withastro/action)
+A template repo for automatic deploys
+
+How to do it (recommended workflow for your PR)
+
+In your fork, convert the site to Astro (great choice — Astro is perfect for a simple static marketing site like this).
+Set up deployment:
+Use Astro's GitHub Pages deployment guide.
+Add a .github/workflows/deploy.yml (Astro can generate this).
+Configure it to build to the gh-pages branch (or main + /docs folder, but gh-pages matches the current setup).
+
+Important settings for custom domain:
+Keep the CNAME file in the output directory (Astro can handle this with outDir + public/ folder or base config).
+In repo Settings → Pages, make sure the custom domain handshake.org is set and enforcement is enabled.
+
+For the PR:
+The maintainers will likely want you to keep deploying to the same gh-pages branch (or update the workflow accordingly).
+Test the custom domain works after deployment.
+Document the new build process in README.md.
+
+
+Potential gotchas
+
+Astro defaults to clean URLs and might change some paths — test redirects/ old links if needed.
+Base path: If deploying to a subpath, set base: '/repo-name' in astro.config.mjs (not needed for root custom domain).
+Static assets: Move images, fonts, etc., into Astro's public/ folder.

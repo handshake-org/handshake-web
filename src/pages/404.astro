@@ -1,0 +1,30 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+  title="Handshake | Page Not Found"
+  description="The page you are looking for does not exist on the Handshake network website."
+>
+  <section class="min-h-[70vh] bg-white flex items-center justify-center py-20 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-max mx-auto text-center">
+      <main class="sm:flex">
+        <p class="text-4xl font-extrabold text-slate-900 sm:text-5xl">404</p>
+        <div class="sm:ml-6">
+          <div class="sm:border-l sm:border-slate-200 sm:pl-6">
+            <h1 class="text-4xl font-extrabold text-slate-900 tracking-tight sm:text-5xl">Page not found</h1>
+            <p class="mt-3 text-base text-slate-500">Please check the URL in the address bar and try again.</p>
+          </div>
+          <div class="mt-10 flex space-x-3 sm:border-l sm:border-transparent sm:pl-6">
+            <a href="/" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-slate-900 hover:bg-slate-800 focus:outline-none transition-colors">
+              Go back home
+            </a>
+            <a href="/faq" class="inline-flex items-center px-4 py-2 border border-slate-300 text-sm font-medium rounded-md text-slate-700 bg-white hover:bg-slate-50 focus:outline-none transition-colors">
+              Read the FAQ
+            </a>
+          </div>
+        </div>
+      </main>
+    </div>
+  </section>
+</Layout>

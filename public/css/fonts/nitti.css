@@ -1,0 +1,14 @@
+@font-face {
+	font-family: "Nitti Light";
+	font-weight: normal;
+	src: url('../../fonts/nitti/nitti-light-v500.eot') format('embedded-opentype'),
+       url('../../fonts/nitti/nitti-light-v500.woff') format('woff');
+}
+
+@font-face {
+	font-family: "Nitti Light";
+	font-weight: bold;
+	src: url('../../fonts/nitti/nitti-medium-v500.eot') format('embedded-opentype'),
+       url('../../fonts/nitti/nitti-medium-v500.woff') format('woff'),
+       url('../../fonts/nitti/nitti-medium-v500.woff2') format('woff2');
+}
