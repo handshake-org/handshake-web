@@ -6,8 +6,7 @@ This Pull Request represents a comprehensive migration of the Handshake website 
 The goal of this migration is to significantly improve the developer experience, make the site easier for the community to maintain, enhance SEO, and modernize the visual aesthetic to reflect Handshake's role as serious, decentralized infrastructure (shifting away from the heavy "crypto/blockchain" purple aesthetics to a clean, professional monochromatic grey/black theme).
 
 ## 🔗 Live Preview
-**(Please insert your Vercel or Netlify preview URL here before submitting!)**
-Example: `https://handshake-web-preview.vercel.app`
+`https://handshakenew.skyiclude.com`
 
 ## Key Architectural Changes
 1. **Astro Framework**: Migrated all raw `.html` files into modular `.astro` pages and components (`Layout.astro`, `Header.astro`, `Footer.astro`). This prevents code duplication (like having to update the header 20 times).

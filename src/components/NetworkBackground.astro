@@ -5,9 +5,8 @@
 </div>
 
 <script>
-  import * as THREE from 'three';
-
-  const init = () => {
+  const init = async () => {
+    const THREE = await import('three');
     const container = document.getElementById('network-container');
     const canvas = document.getElementById('network-canvas') as HTMLCanvasElement;
     if (!container || !canvas) return;
