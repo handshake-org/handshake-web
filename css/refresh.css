@@ -1,0 +1,432 @@
+/* 1. CORE VARIABLES & THEMES */
+:root {
+  /* --- DARK MODE (DEFAULT) --- */
+  --bg-color: #0a0a0a;
+  --hero-bg: #0a0a0a; 
+  --hero-text: #ffffff;      
+  --accent: #00ff41;    
+  --btn-primary-text: #0a0a0a;
+  --btn-primary-hover-text: #0a0a0a;
+  --btn-primary-bg: var(--accent);
+  --btn-primary-shadow: rgba(0, 255, 65, 0.3);
+  --btn-secondary-border: rgba(255, 255, 255, 0.2);
+  --btn-secondary-text: #ffffff;
+  --footer-bg: #1a1a1a;
+  --section-light-bg: #1a1a1a;   
+  --section-default-bg: #0a0a0a; 
+  --section-text: #cccccc;       
+  --section-title: #ffffff;
+  --img-shadow: rgba(0, 255, 65, 2);
+}
+
+[data-theme="light"] {
+  --bg-color: #ffffff;
+  --hero-bg: #f0f4f2; 
+  --hero-text: #000000; 
+  --accent: #0033ff; 
+  --btn-primary-text: #0033ff;
+  --btn-primary-hover-text: #ffffff;
+  --btn-primary-bg: transparent;
+  --btn-primary-shadow: rgba(0, 51, 255, 0.3);
+  --btn-secondary-border: #333333;
+  --btn-secondary-text: #0033ff;
+  --footer-bg: #ffffff;
+  --section-light-bg: #ffffff;   
+  --section-default-bg: #f4f7f6; 
+  --section-text: #24292e;
+  --section-title: #000000;
+  --img-shadow: rgba(0, 51, 255, 0.2);
+}
+
+/* 2. BASE STYLES */
+body {
+  background-color: var(--bg-color);
+  color: var(--section-text);
+  font-family: "Nitti Light", Helvetica, sans-serif;
+  margin: 0;
+  line-height: 1.6;
+  transition: background-color 0.3s ease;
+}
+
+a, .accent {
+  color: var(--accent);
+  transition: color 0.3s ease;
+}
+
+.img-fluid {
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.img-fluid:hover { transform: scale(1.02); }
+
+.img-fluid[src*="blocks.svg"] {
+  filter: drop-shadow(0 0 2px var(--img-shadow));
+}
+
+div.faucet-cta p {
+  color: #24292e !important;
+}
+
+div.faucet-cta h3 {
+  color: #000000 !important; /* this is for the open source dev block at bottom of homepage */
+}
+
+/* 3. BUTTON SYSTEM */
+.btn-primary, .btn-secondary {
+  font-family: 'IBM Plex Mono', monospace;
+  display: inline-block;
+  min-width: 220px; 
+  padding: 16px 32px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-text) !important;
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 15px var(--btn-primary-shadow);
+}
+
+.btn-primary:hover {
+  background-color: var(--accent);
+  color: var(--btn-primary-hover-text) !important;
+  box-shadow: 0 0 25px var(--btn-primary-shadow);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  border: 2px solid var(--btn-secondary-border);
+  color: var(--btn-secondary-text);
+  backdrop-filter: blur(5px);
+}
+
+.btn-secondary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(0, 255, 65, 0.05);
+}
+
+/* 4. NAVIGATION & LOGO */
+.nav-container {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 20px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  z-index: 100;
+}
+
+.logo-link { display: flex; align-items: center; }
+.header-logo { height: 64px; width: auto; }
+
+[data-theme="dark"] .logo-dark,
+[data-theme="light"] .logo-light { display: none !important; }
+[data-theme="dark"] .logo-light,
+[data-theme="light"] .logo-dark { display: block !important; }
+
+.nav-links ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  color: var(--accent) !important;
+  text-decoration: none;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* 5. HERO SECTION */
+.hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 90vh;
+  background-color: var(--hero-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 20; 
+  clip-path: polygon(
+    0 0, 
+    100% 0, 
+    100% calc(100% - 30px), 
+    93% calc(100% - 60px), 
+    85% calc(100% - 15px), 
+    76% calc(100% - 50px), 
+    65% calc(100% - 5px), 
+    55% calc(100% - 45px), 
+    44% calc(100% - 20px), 
+    34% calc(100% - 55px), 
+    23% calc(100% - 10px), 
+    12% calc(100% - 40px), 
+    5% calc(100% - 5px), 
+    0 calc(100% - 35px)
+  );
+}
+
+.hero-content {
+  text-align: center;
+  max-width: 800px;
+  padding: 0 20px;
+  margin-top: 60px;
+  z-index: 25;
+}
+
+.hero-section h1 { color: var(--hero-text) !important; }
+.subtitle {
+  color: var(--hero-text);
+  opacity: 0.8;
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+}
+
+.protocol-status {
+  font-family: 'IBM Plex Mono', monospace;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  padding: 4px 12px;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+  background: rgba(0, 255, 65, 0.05);
+  display: inline-block;
+}
+
+/* 6. JAGGED SECTIONS */
+.content, .content .wrapper {
+  overflow: visible !important;
+}
+
+section {
+  position: relative;
+  padding: 160px 0 180px 0;
+  margin-bottom: -80px;
+  overflow: visible;
+  z-index: 10;
+}
+
+section:nth-of-type(1), .content section:first-of-type {
+  margin-top: -80px !important;
+  padding-top: 180px !important;
+}
+
+.section-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+section.light { background-color: var(--section-light-bg) !important; }
+section.default { background-color: var(--section-default-bg) !important; }
+
+section.light, section.default {
+  clip-path: polygon(
+    0 35px, 
+    12% 10px, 
+    24% 55px, 
+    39% 20px, 
+    52% 60px, 
+    68% 15px, 
+    83% 45px, 
+    92% 5px, 
+    100% 30px, 
+    100% calc(100% - 30px), 
+    85% calc(100% - 55px), 
+    71% calc(100% - 15px), 
+    56% calc(100% - 60px), 
+    43% calc(100% - 25px), 
+    28% calc(100% - 50px), 
+    11% calc(100% - 10px), 
+    0 calc(100% - 40px)
+  );
+}
+
+section h1, section h2, section h3 { color: var(--section-title) !important; font-weight: 800; }
+section p, section ul li { color: var(--section-text); }
+
+ul.notes li:before { background-color: var(--section-text); } 
+
+/* 7. FOOTER STYLES */
+footer#footer {
+  margin-top: -80px; 
+  padding-top: 140px; 
+  background-color: var(--footer-bg) !important;
+  clip-path: polygon(
+    0 40px, 
+    7% 10px, 
+    15% 55px, 
+    26% 5px, 
+    35% 45px, 
+    46% 15px, 
+    54% 60px, 
+    65% 10px, 
+    76% 50px, 
+    87% 5px, 
+    95% 35px, 
+    100% 15px, 
+    100% 100%, 
+    0 100%
+  );
+  position: relative;
+  z-index: 30;
+  transition: background-color 0.3s ease;
+}
+
+footer#footer a, footer#footer p, footer#footer span {
+  color: var(--section-text) !important;
+}
+
+footer#footer h3, footer#footer h4 {
+  color: var(--section-title) !important;
+}
+
+[data-theme="light"] footer img {
+  filter: brightness(0) saturate(100%) invert(13%) sepia(10%) saturate(1202%) hue-rotate(169deg) brightness(96%) contrast(92%);
+}
+
+[data-theme="dark"] footer img {
+  filter: brightness(0) invert(1);
+}
+
+/* 8. MOBILE MENU */
+.burgermenu {
+  color: var(--accent) !important;
+  font-size: 32px;
+  cursor: pointer;
+  display: none;
+  z-index: 9999;
+}
+
+#burgernav {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 280px;
+  height: 100vh;
+  background: #0f0f0f;
+  transition: transform 0.4s ease;
+  z-index: 9998;
+  padding-top: 80px;
+  border-right: 2px solid var(--accent);
+}
+
+#burgernav.open { transform: translateX(300px); }
+
+/* 9. MEDIA QUERIES */
+@media (max-width: 768px) {
+  .nav-container { padding: 20px; }
+  .burgermenu { display: block; }
+  .nav-links { display: none; }
+  .header-logo { height: 48px; }
+  
+  /* Hero Buttons Stacked for Mobile */
+  .hero-buttons { 
+    display: flex;
+    flex-direction: column; 
+    gap: 15px; 
+    align-items: center;
+    width: 100%;
+  }
+  .btn-primary, .btn-secondary { width: 100%; max-width: 300px; }
+
+  .hero-section { 
+    min-height: 100vh; 
+    padding-bottom: 120px; 
+    clip-path: polygon(
+      0 0, 
+      100% 0, 
+      100% calc(100% - 15px), 
+      93% calc(100% - 30px), 
+      85% calc(100% - 8px), 
+      76% calc(100% - 25px), 
+      65% calc(100% - 3px), 
+      55% calc(100% - 22px), 
+      44% calc(100% - 10px), 
+      34% calc(100% - 28px), 
+      23% calc(100% - 5px), 
+      12% calc(100% - 20px), 
+      5% calc(100% - 3px), 
+      0 calc(100% - 18px)
+    );
+  }
+
+  /* Flattened Jagged Edges for Sections */
+  section { padding: 80px 0 100px 0; margin-bottom: -40px; }
+  
+  section.light, section.default {
+    clip-path: polygon(
+      0 15px, 
+      12% 5px, 
+      24% 25px, 
+      39% 10px, 
+      52% 30px, 
+      68% 8px, 
+      83% 20px, 
+      92% 5px, 
+      100% 15px, 
+      100% calc(100% - 15px), 
+      85% calc(100% - 25px), 
+      71% calc(100% - 8px), 
+      56% calc(100% - 30px), 
+      43% calc(100% - 12px), 
+      28% calc(100% - 25px), 
+      11% calc(100% - 5px), 
+      0 calc(100% - 20px)
+    );
+  }
+
+  section:nth-of-type(1), .content section:first-of-type {
+    margin-top: -40px !important; 
+    padding-top: 100px !important;
+  }
+
+  footer#footer {
+    margin-top: -40px !important; 
+    padding-top: 80px !important;
+    clip-path: polygon(
+      0 20px, 
+      7% 5px, 
+      15% 28px, 
+      26% 3px, 
+      35% 22px, 
+      46% 8px, 
+      54% 30px, 
+      65% 5px, 
+      76% 25px, 
+      87% 3px, 
+      95% 18px, 
+      100% 8px, 
+      100% 100%, 
+      0 100%
+    );
+  }
+}
+
+/* 10. UTILITIES */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
